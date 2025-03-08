@@ -75,33 +75,39 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Design UI/UX",
-                description: "Création d'interfaces utilisateurs intuitives et esthétiques pour une expérience optimale.",
+                title: "Conseil & Stratégie Digitale",
+                description: "Audit digital, élaboration de stratégies sur mesure, planification de la transformation digitale.",
+                icon: "💡",
                 delay: "0ms"
               },
               {
                 title: "Développement Web",
-                description: "Sites et applications web performants, responsive et optimisés pour les moteurs de recherche.",
+                description: "Sites web personnalisés, applications web, e-commerce, optimisés pour la performance et le référencement.",
+                icon: "💻",
                 delay: "100ms"
               },
               {
-                title: "Marketing Digital",
-                description: "Stratégies marketing sur mesure pour attirer et convertir votre audience cible.",
+                title: "Design Graphique",
+                description: "Conception d'identités visuelles, logos, UI/UX design et supports de communication.",
+                icon: "🎨",
                 delay: "200ms"
               },
               {
-                title: "Branding & Identité",
-                description: "Création d'identités visuelles mémorables qui renforcent votre image de marque.",
+                title: "Marketing Digital",
+                description: "SEO/SEA, campagnes publicitaires en ligne, gestion des réseaux sociaux, content marketing.",
+                icon: "📈",
                 delay: "300ms"
               },
               {
-                title: "E-commerce",
-                description: "Solutions e-commerce personnalisées pour vendre vos produits en ligne.",
+                title: "Formation & Support",
+                description: "Sessions de formation personnalisées, support technique et accompagnement continu.",
+                icon: "🛠️",
                 delay: "400ms"
               },
               {
-                title: "Maintenance & Support",
-                description: "Support technique et maintenance continue pour assurer la pérennité de vos projets.",
+                title: "Maintenance & Évolution",
+                description: "Maintenance préventive, mise à jour, sécurité et amélioration continue de vos solutions digitales.",
+                icon: "⚙️",
                 delay: "500ms"
               }
             ].map((service, index) => (
@@ -110,13 +116,22 @@ const Index = () => {
                 className="glass-card rounded-xl p-6 hover:translate-y-[-5px] transition-all duration-300"
                 style={{ animationDelay: service.delay }}
               >
-                <div className="h-12 w-12 rounded-full bg-afh/10 flex items-center justify-center mb-4">
-                  <span className="text-afh font-bold">{index + 1}</span>
-                </div>
+                <div className="text-3xl mb-4">{service.icon}</div>
                 <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-muted-foreground">{service.description}</p>
+                <p className="text-muted-foreground mb-4">{service.description}</p>
+                <Link to="/services" className="text-afh font-medium hover:underline inline-flex items-center">
+                  En savoir plus
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
               </div>
             ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link to="/services" className="btn-afh inline-flex items-center">
+              Tous nos services
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
