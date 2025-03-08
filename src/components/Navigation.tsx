@@ -24,11 +24,12 @@ export default function Navigation() {
   }, []);
 
   const navLinks = [
-    { name: "Accueil", path: "/" },
-    { name: "Articles", path: "/articles" },
-    { name: "Portfolio", path: "/portfolio" },
-    { name: "À propos", path: "/about" },
-    { name: "Contact", path: "/contact" },
+    { name: "Accueil", path: "/", emoji: "🏠" },
+    { name: "Services", path: "/services", emoji: "⚙️" },
+    { name: "Articles", path: "/articles", emoji: "📝" },
+    { name: "Portfolio", path: "/portfolio", emoji: "💼" },
+    { name: "À propos", path: "/about", emoji: "ℹ️" },
+    { name: "Contact", path: "/contact", emoji: "✉️" },
   ];
 
   const closeMenu = () => setIsMenuOpen(false);
@@ -43,11 +44,11 @@ export default function Navigation() {
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center">
+        <Link to="/" className="flex items-center group">
           <img 
             src="/lovable-uploads/e616b606-b422-4899-a03c-02767eef8b81.png" 
             alt="AFH Agency" 
-            className="h-10" 
+            className="h-10 transition-transform duration-300 group-hover:scale-110" 
           />
         </Link>
 
@@ -59,13 +60,14 @@ export default function Navigation() {
                 key={link.path}
                 to={link.path}
                 className={cn(
-                  "px-3 py-2 rounded-md text-sm font-medium transition-all",
+                  "px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 flex items-center space-x-1 hover:scale-105",
                   location.pathname === link.path
-                    ? "text-afh font-semibold"
+                    ? "text-afh font-semibold" 
                     : "hover:text-afh"
                 )}
               >
-                {link.name}
+                <span className="text-base">{link.emoji}</span>
+                <span>{link.name}</span>
               </Link>
             ))}
           </div>
@@ -77,13 +79,13 @@ export default function Navigation() {
           <ThemeToggle />
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="ml-4 p-2 glass rounded-md"
+            className="ml-4 p-2 glass rounded-md transition-all duration-300 hover:scale-105"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6" />
+              <X className="h-6 w-6 animate-fade-in" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <Menu className="h-6 w-6 animate-fade-in" />
             )}
           </button>
         </div>
@@ -99,13 +101,14 @@ export default function Navigation() {
                 to={link.path}
                 onClick={closeMenu}
                 className={cn(
-                  "block px-4 py-3 rounded-md text-center transition-all",
+                  "block px-4 py-3 rounded-md text-center transition-all duration-300 flex items-center justify-center space-x-2",
                   location.pathname === link.path
                     ? "bg-afh/10 text-afh font-semibold"
-                    : "hover:bg-afh/5"
+                    : "hover:bg-afh/5 hover:scale-105"
                 )}
               >
-                {link.name}
+                <span className="text-xl">{link.emoji}</span>
+                <span>{link.name}</span>
               </Link>
             ))}
           </div>
