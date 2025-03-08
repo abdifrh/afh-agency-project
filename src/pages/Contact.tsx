@@ -1,8 +1,6 @@
-
 import { useState } from "react";
 import { Check, MapPin, Phone, Mail, Send, Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-import Footer from "../components/Footer";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -246,8 +244,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      
-      <Footer />
     </div>
   );
 };
