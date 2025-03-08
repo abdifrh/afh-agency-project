@@ -1,6 +1,7 @@
 
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const Index = () => {
   return (
@@ -16,19 +17,13 @@ const Index = () => {
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-slide-up">
-              <div className="inline-block">
-                <div className="glass px-4 py-2 rounded-full text-sm md:text-base mb-6">
-                  <span className="text-afh font-semibold">Agence Web Digitale</span>
-                </div>
-              </div>
-              
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Transformez votre <span className="text-afh">présence digitale</span> avec créativité
+                Transformez votre <span className="text-afh">présence digitale</span> avec créativité ✨
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground">
                 Nous créons des expériences web immersives qui captent l'attention 
-                et convertissent les visiteurs en clients fidèles.
+                et convertissent les visiteurs en clients fidèles 🚀
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -46,14 +41,18 @@ const Index = () => {
               <div className="glass-card p-6 md:p-8 rounded-2xl rotate-3 z-10 afh-glow group">
                 <div className="relative z-10 aspect-video rounded-lg overflow-hidden">
                   <div className="w-full h-full bg-gradient-to-tr from-afh/80 to-purple-600/80 flex items-center justify-center">
-                    <span className="text-white text-xl md:text-2xl font-bold">Design Digital</span>
+                    <span className="text-white text-xl md:text-2xl font-bold flex items-center">
+                      <Sparkles className="h-5 w-5 mr-2" /> Design Digital
+                    </span>
                   </div>
                 </div>
               </div>
               <div className="glass-card p-6 md:p-8 rounded-2xl absolute -bottom-4 -left-4 -rotate-3 z-0">
                 <div className="relative z-10 aspect-video rounded-lg overflow-hidden">
                   <div className="w-full h-full bg-gradient-to-bl from-blue-500/80 to-purple-600/80 flex items-center justify-center">
-                    <span className="text-white text-xl md:text-2xl font-bold">Développement Web</span>
+                    <span className="text-white text-xl md:text-2xl font-bold flex items-center">
+                      💻 Développement Web
+                    </span>
                   </div>
                 </div>
               </div>
@@ -68,7 +67,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Nos Services</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Des solutions digitales complètes pour tous vos besoins
+              Des solutions digitales complètes pour tous vos besoins 🛠️
             </p>
           </div>
           
@@ -144,9 +143,9 @@ const Index = () => {
         
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="glass-card rounded-2xl p-8 md:p-12 afh-glow text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Prêt à transformer votre présence digitale ?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Prêt à transformer votre présence digitale ? ✨</h2>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Prenez contact avec notre équipe pour discuter de votre projet et découvrir comment nous pouvons vous aider à atteindre vos objectifs.
+              Prenez contact avec notre équipe pour discuter de votre projet et découvrir comment nous pouvons vous aider à atteindre vos objectifs 🚀
             </p>
             <Link to="/contact" className="btn-afh inline-flex items-center">
               Contactez-nous
@@ -155,6 +154,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };

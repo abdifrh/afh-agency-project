@@ -1,7 +1,8 @@
 
 import { useState } from "react";
-import { Check, MapPin, Phone, Mail, Send } from "lucide-react";
+import { Check, MapPin, Phone, Mail, Send, Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import Footer from "../components/Footer";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -28,7 +29,7 @@ const Contact = () => {
       setIsSubmitting(false);
       setIsSubmitted(true);
       toast({
-        title: "Message envoyé !",
+        title: "Message envoyé ! ✅",
         description: "Nous vous répondrons dans les plus brefs délais.",
       });
       // Reset form after toast
@@ -62,13 +63,20 @@ const Contact = () => {
     },
   ];
 
+  const socialIcons = [
+    { icon: <Instagram className="h-5 w-5" />, name: "instagram" },
+    { icon: <Facebook className="h-5 w-5" />, name: "facebook" },
+    { icon: <Twitter className="h-5 w-5" />, name: "twitter" },
+    { icon: <Linkedin className="h-5 w-5" />, name: "linkedin" },
+  ];
+
   return (
-    <div className="min-h-screen pt-24 bg-gradient-light dark:bg-gradient-dark">
-      <div className="container mx-auto px-4 md:px-6">
+    <div className="min-h-screen pt-24 pb-0 bg-gradient-light dark:bg-gradient-dark flex flex-col">
+      <div className="container mx-auto px-4 md:px-6 flex-grow">
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">Contactez-nous</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">Contactez-nous ✉️</h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Discutons de votre projet et voyons comment nous pouvons vous aider à atteindre vos objectifs.
+            Discutons de votre projet et voyons comment nous pouvons vous aider à atteindre vos objectifs 🚀
           </p>
         </div>
 
@@ -77,7 +85,7 @@ const Contact = () => {
             <div className="grid md:grid-cols-2">
               {/* Contact Form */}
               <div className="p-8 md:p-10">
-                <h2 className="text-2xl font-bold mb-6">Envoyez-nous un message</h2>
+                <h2 className="text-2xl font-bold mb-6">Envoyez-nous un message 📝</h2>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
@@ -161,7 +169,7 @@ const Contact = () => {
                     ) : isSubmitted ? (
                       <span className="inline-flex items-center">
                         <Check className="mr-2 h-4 w-4" />
-                        Message envoyé !
+                        Message envoyé ! ✅
                       </span>
                     ) : (
                       <span className="inline-flex items-center">
@@ -175,7 +183,7 @@ const Contact = () => {
               
               {/* Contact Information */}
               <div className="bg-gradient-to-br from-afh/90 to-afh-dark p-8 md:p-10 text-white">
-                <h2 className="text-2xl font-bold mb-6">Informations de contact</h2>
+                <h2 className="text-2xl font-bold mb-6">Informations de contact 📞</h2>
                 
                 <div className="space-y-6 mb-10">
                   {contactInfo.map((info, index) => (
@@ -192,7 +200,7 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <h3 className="font-medium text-white/90 mb-3">Horaires d'ouverture</h3>
+                  <h3 className="font-medium text-white/90 mb-3">Horaires d'ouverture ⏰</h3>
                   <div className="text-white/70 space-y-2">
                     <p>Lundi - Vendredi: 9h00 - 18h00</p>
                     <p>Weekend: Fermé</p>
@@ -202,14 +210,14 @@ const Contact = () => {
                 <div className="mt-10">
                   <h3 className="font-medium text-white/90 mb-3">Suivez-nous</h3>
                   <div className="flex space-x-3">
-                    {["twitter", "facebook", "instagram", "linkedin"].map((social) => (
+                    {socialIcons.map((social) => (
                       <a
-                        key={social}
+                        key={social.name}
                         href="#"
                         className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                       >
-                        <span className="sr-only">{social}</span>
-                        <Mail className="h-5 w-5" />
+                        <span className="sr-only">{social.name}</span>
+                        {social.icon}
                       </a>
                     ))}
                   </div>
@@ -222,16 +230,24 @@ const Contact = () => {
         {/* Map */}
         <div className="mb-20">
           <div className="glass-card rounded-2xl overflow-hidden p-1 afh-glow">
-            <div className="aspect-[16/9] rounded-xl overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                alt="Map location" 
-                className="w-full h-full object-cover"
-              />
+            <div className="aspect-[16/9] rounded-xl overflow-hidden relative">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937604!2d2.292288776538312!3d48.85836947124266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTour%20Eiffel!5m2!1s1fr!2sfr"
+                width="100%" 
+                height="100%" 
+                style={{ border: 0, position: 'absolute', top: 0, left: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Carte Google Maps"
+                className="w-full h-full"
+              ></iframe>
             </div>
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };

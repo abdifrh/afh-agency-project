@@ -47,9 +47,8 @@ export default function Navigation() {
           <img 
             src="/lovable-uploads/e616b606-b422-4899-a03c-02767eef8b81.png" 
             alt="AFH Agency" 
-            className="h-10 mr-3" 
+            className="h-10" 
           />
-          <span className="text-xl font-bold hidden md:inline">AFH Agency</span>
         </Link>
 
         {/* Desktop Navigation */}
