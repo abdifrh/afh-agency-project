@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { Check, MapPin, Phone, Mail, Send, Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
+import { Check, MapPin, Phone, Mail, Send, Instagram, Facebook, Linkedin } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -22,15 +23,26 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    const templateParams = {
+      from_name: formState.name,
+      from_email: formState.email,
+      subject: formState.subject,
+      message: formState.message,
+    };
+
+    emailjs.send(
+      'service_afhagency', 
+      'template_ga4klml',
+      templateParams,
+      'HCEXQ7VFrYVNsDQ3j'
+    )
+    .then(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
       toast({
         title: "Message envoyé ! ✅",
         description: "Nous vous répondrons dans les plus brefs délais.",
       });
-      // Reset form after toast
       setTimeout(() => {
         setFormState({
           name: "",
@@ -40,32 +52,52 @@ const Contact = () => {
         });
         setIsSubmitted(false);
       }, 1000);
-    }, 1500);
+    })
+    .catch((error) => {
+      console.error('Failed to send email:', error);
+      setIsSubmitting(false);
+      toast({
+        title: "Erreur",
+        description: "Une erreur est survenue. Veuillez réessayer plus tard.",
+        variant: "destructive",
+      });
+    });
   };
 
   const contactInfo = [
     {
       icon: <MapPin className="h-5 w-5 text-afh" />,
       title: "Notre adresse",
-      details: "123 Avenue Digitale, 75001 Paris, France",
+      details: "Strasbourg, France",
     },
     {
       icon: <Phone className="h-5 w-5 text-afh" />,
       title: "Téléphone",
-      details: "+33 1 23 45 67 89",
+      details: "+33 7 50 01 58 96",
     },
     {
       icon: <Mail className="h-5 w-5 text-afh" />,
       title: "Email",
-      details: "contact@afh-agency.com",
+      details: "afhagency@outlook.fr",
     },
   ];
 
   const socialIcons = [
-    { icon: <Instagram className="h-5 w-5" />, name: "instagram" },
-    { icon: <Facebook className="h-5 w-5" />, name: "facebook" },
-    { icon: <Twitter className="h-5 w-5" />, name: "twitter" },
-    { icon: <Linkedin className="h-5 w-5" />, name: "linkedin" },
+    { 
+      icon: <Instagram className="h-5 w-5" />, 
+      name: "instagram", 
+      url: "https://instagram.com/afhagency" 
+    },
+    { 
+      icon: <Facebook className="h-5 w-5" />, 
+      name: "facebook", 
+      url: "https://www.facebook.com/profile.php?id=61573906681452" 
+    },
+    { 
+      icon: <Linkedin className="h-5 w-5" />, 
+      name: "linkedin", 
+      url: "https://fr.linkedin.com/company/afhagency" 
+    },
   ];
 
   return (
@@ -81,7 +113,6 @@ const Contact = () => {
         <div className="max-w-5xl mx-auto mb-20">
           <div className="glass-card rounded-2xl shadow-xl overflow-hidden">
             <div className="grid md:grid-cols-2">
-              {/* Contact Form */}
               <div className="p-8 md:p-10">
                 <h2 className="text-2xl font-bold mb-6">Envoyez-nous un message 📝</h2>
                 
@@ -179,7 +210,6 @@ const Contact = () => {
                 </form>
               </div>
               
-              {/* Contact Information */}
               <div className="bg-gradient-to-br from-afh/90 to-afh-dark p-8 md:p-10 text-white">
                 <h2 className="text-2xl font-bold mb-6">Informations de contact 📞</h2>
                 
@@ -211,7 +241,9 @@ const Contact = () => {
                     {socialIcons.map((social) => (
                       <a
                         key={social.name}
-                        href="#"
+                        href={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="h-10 w-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
                       >
                         <span className="sr-only">{social.name}</span>
@@ -225,12 +257,11 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Map */}
         <div className="mb-20">
           <div className="glass-card rounded-2xl overflow-hidden p-1 afh-glow">
             <div className="aspect-[16/9] rounded-xl overflow-hidden relative">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937604!2d2.292288776538312!3d48.85836947124266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTour%20Eiffel!5m2!1s1fr!2sfr"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42013.33561416223!2d7.701344349999999!3d48.57992155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4796c8495e18b2c1%3A0x971a483118e7241f!2sStrasbourg!5e0!3m2!1sfr!2sfr!4v1716479654782!5m2!1sfr!2sfr"
                 width="100%" 
                 height="100%" 
                 style={{ border: 0, position: 'absolute', top: 0, left: 0 }}

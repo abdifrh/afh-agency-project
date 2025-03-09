@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -15,10 +15,21 @@ const Footer = () => {
   ];
   
   const socialLinks = [
-    { icon: <Instagram className="h-5 w-5" />, path: "#", label: "Instagram" },
-    { icon: <Facebook className="h-5 w-5" />, path: "#", label: "Facebook" },
-    { icon: <Twitter className="h-5 w-5" />, path: "#", label: "Twitter" },
-    { icon: <Linkedin className="h-5 w-5" />, path: "#", label: "LinkedIn" },
+    { 
+      icon: <Instagram className="h-5 w-5" />, 
+      path: "https://instagram.com/afhagency", 
+      label: "Instagram" 
+    },
+    { 
+      icon: <Facebook className="h-5 w-5" />, 
+      path: "https://www.facebook.com/profile.php?id=61573906681452", 
+      label: "Facebook" 
+    },
+    { 
+      icon: <Linkedin className="h-5 w-5" />, 
+      path: "https://fr.linkedin.com/company/afhagency", 
+      label: "LinkedIn" 
+    },
   ];
 
   return (
@@ -42,6 +53,8 @@ const Footer = () => {
                 <a 
                   key={index}
                   href={link.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="h-9 w-9 flex items-center justify-center rounded-full bg-afh/10 hover:bg-afh/20 text-afh transition-colors"
                   aria-label={link.label}
                 >
@@ -86,15 +99,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center">
                 <MapPin className="h-5 w-5 text-afh mr-3" />
-                <span className="text-muted-foreground">123 Avenue Digitale, 75001 Paris</span>
+                <span className="text-muted-foreground">Strasbourg, France</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-afh mr-3" />
-                <span className="text-muted-foreground">+33 1 23 45 67 89</span>
+                <span className="text-muted-foreground">+33 7 50 01 58 96</span>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-afh mr-3" />
-                <span className="text-muted-foreground">contact@afh-agency.com</span>
+                <span className="text-muted-foreground">afhagency@outlook.fr</span>
               </li>
             </ul>
           </div>
