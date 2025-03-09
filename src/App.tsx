@@ -11,10 +11,11 @@ import Index from "./pages/Index";
 import Services from "./pages/Services";
 import Articles from "./pages/Articles";
 import Portfolio from "./pages/Portfolio";
+import ProjectDetail from "./pages/ProjectDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import ArticleDetail from "./pages/ArticleDetail"; // Add new page for article details
+import ArticleDetail from "./pages/ArticleDetail";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
                 <Route path="/articles" element={<Articles />} />
                 <Route path="/articles/:slug" element={<ArticleDetail />} />
                 <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/portfolio/:slug" element={<ProjectDetail />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<NotFound />} />

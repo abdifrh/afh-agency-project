@@ -1,6 +1,7 @@
 
 import { useState, useRef } from "react";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("tous");
@@ -22,6 +23,7 @@ const Portfolio = () => {
       description: "Boutique en ligne de mode avec une expérience d'achat immersive et intuitive.",
       image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       client: "Lumina",
+      slug: "lumina-fashion"
     },
     {
       id: 2,
@@ -30,6 +32,7 @@ const Portfolio = () => {
       description: "Site vitrine pour une entreprise de solutions écologiques innovantes.",
       image: "https://images.unsplash.com/photo-1545128485-c400ce7b17d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       client: "Evergreen",
+      slug: "evergreen-solutions"
     },
     {
       id: 3,
@@ -38,6 +41,7 @@ const Portfolio = () => {
       description: "Application de suivi nutritionnel avec des visualisations de données avancées.",
       image: "https://images.unsplash.com/photo-1575224526797-5730d09d781d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       client: "HealthTech",
+      slug: "nutritrack"
     },
     {
       id: 4,
@@ -46,6 +50,7 @@ const Portfolio = () => {
       description: "Identité visuelle complète pour une chaîne de cafés artisanaux.",
       image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       client: "Café Artisan",
+      slug: "artisan-coffee"
     },
     {
       id: 5,
@@ -54,6 +59,7 @@ const Portfolio = () => {
       description: "Application de mobilité urbaine avec services de location et navigation.",
       image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       client: "CityMove",
+      slug: "urban-mobility"
     },
     {
       id: 6,
@@ -62,6 +68,7 @@ const Portfolio = () => {
       description: "Plateforme de réservation pour une chaîne d'hôtels de luxe avec expérience utilisateur optimisée.",
       image: "https://images.unsplash.com/photo-1596436889106-be35e843f974?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       client: "Panorama Group",
+      slug: "panorama-hotels"
     },
     {
       id: 7,
@@ -70,6 +77,7 @@ const Portfolio = () => {
       description: "Marketplace en ligne pour produits alimentaires locaux et bio.",
       image: "https://images.unsplash.com/photo-1608686207856-001b95cf60ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       client: "Fresh Co.",
+      slug: "fresh-market"
     },
     {
       id: 8,
@@ -78,6 +86,7 @@ const Portfolio = () => {
       description: "Refonte complète de l'identité de marque pour une entreprise technologique.",
       image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
       client: "Nova Innovations",
+      slug: "novatech"
     },
   ];
 
@@ -135,9 +144,9 @@ const Portfolio = () => {
                     <div className="p-6 w-full">
                       <div className="flex justify-between items-center">
                         <span className="text-white text-sm">{project.client}</span>
-                        <span className="bg-afh p-2 rounded-full text-white">
+                        <Link to={`/portfolio/${project.slug}`} className="bg-afh p-2 rounded-full text-white hover:scale-110 transition-transform">
                           <ArrowUpRight size={16} />
-                        </span>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -154,13 +163,13 @@ const Portfolio = () => {
                   <p className="text-muted-foreground mb-4">
                     {project.description}
                   </p>
-                  <a 
-                    href="#" 
+                  <Link 
+                    to={`/portfolio/${project.slug}`}
                     className="mt-auto inline-flex items-center text-sm font-medium text-afh hover:underline"
                   >
                     Voir le projet
                     <ExternalLink className="ml-1 h-4 w-4" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

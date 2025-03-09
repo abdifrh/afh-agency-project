@@ -66,6 +66,7 @@ export default function Navigation() {
                     : "hover:text-afh"
                 )}
               >
+                <span>{link.emoji}</span>
                 <span>{link.name}</span>
               </Link>
             ))}
@@ -106,6 +107,7 @@ export default function Navigation() {
                     : "hover:bg-afh/5 hover:scale-105"
                 )}
               >
+                <span>{link.emoji}</span>
                 <span>{link.name}</span>
               </Link>
             ))}
