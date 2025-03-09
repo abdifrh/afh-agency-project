@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Check, MapPin, Phone, Mail, Send, Instagram, Facebook, Linkedin } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
@@ -30,11 +31,12 @@ const Contact = () => {
       message: formState.message,
     };
 
+    // Update EmailJS configuration with the correct details
     emailjs.send(
       'service_afhagency', 
       'template_ga4klml',
       templateParams,
-      'HCEXQ7VFrYVNsDQ3j'
+      't4yO1uzO3JXGWprMH'
     )
     .then(() => {
       setIsSubmitting(false);
