@@ -78,7 +78,7 @@ const Contact = () => {
     {
       icon: <Mail className="h-5 w-5 text-afh" />,
       title: "Email",
-      details: "afhagency@outlook.fr",
+      details: "contact@afh-agency.com",
     },
   ];
 
