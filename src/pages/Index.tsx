@@ -1,5 +1,5 @@
 
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, CheckCircle, Users, BarChart, Clock, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -44,11 +44,6 @@ const Index = () => {
                     alt="Design Digital Workspace" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-afh/80 to-transparent flex items-center justify-center">
-                    <span className="text-white text-xl md:text-2xl font-bold flex items-center">
-                      <Sparkles className="h-5 w-5 mr-2" /> Design Digital
-                    </span>
-                  </div>
                 </div>
               </div>
               <div className="glass-card p-6 md:p-8 rounded-2xl absolute -bottom-4 -left-4 -rotate-3 z-0">
@@ -58,11 +53,6 @@ const Index = () => {
                     alt="Développement Web" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-bl from-blue-500/60 to-transparent flex items-center justify-center">
-                    <span className="text-white text-xl md:text-2xl font-bold flex items-center">
-                      💻 Développement Web
-                    </span>
-                  </div>
                 </div>
               </div>
             </div>
@@ -140,6 +130,111 @@ const Index = () => {
               Tous nos services
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Pourquoi nous choisir Section */}
+      <section className="py-20 bg-gradient-light dark:bg-gradient-dark">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <img 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
+                alt="Notre équipe" 
+                className="rounded-2xl shadow-lg object-cover w-full h-[400px]"
+              />
+            </div>
+            
+            <div className="space-y-8">
+              <h2 className="text-3xl md:text-4xl font-bold">Pourquoi Choisir <span className="text-afh">AFH Agency</span> ?</h2>
+              
+              <div className="space-y-4">
+                {[
+                  {
+                    title: "Expertise reconnue",
+                    description: "Notre équipe de professionnels cumule plus de 15 ans d'expérience dans le digital.",
+                    icon: <Award className="h-6 w-6 text-afh" />
+                  },
+                  {
+                    title: "Approche personnalisée",
+                    description: "Chaque projet est unique et mérite une stratégie sur mesure adaptée à vos objectifs.",
+                    icon: <Users className="h-6 w-6 text-afh" />
+                  },
+                  {
+                    title: "Résultats mesurables",
+                    description: "Nous nous concentrons sur des KPIs concrets pour mesurer l'impact de nos interventions.",
+                    icon: <BarChart className="h-6 w-6 text-afh" />
+                  },
+                  {
+                    title: "Accompagnement continu",
+                    description: "Au-delà de la livraison, nous vous accompagnons dans l'évolution de votre présence digitale.",
+                    icon: <Clock className="h-6 w-6 text-afh" />
+                  }
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <div className="mt-1">{item.icon}</div>
+                    <div>
+                      <h3 className="font-semibold text-xl">{item.title}</h3>
+                      <p className="text-muted-foreground">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <Link to="/about" className="btn-afh inline-flex items-center">
+                En savoir plus sur nous
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Témoignages Section */}
+      <section className="py-20 bg-gradient-light dark:bg-gradient-dark">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ce que nos clients disent</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              La satisfaction de nos clients est notre priorité absolue
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Sophie Dupont",
+                company: "Tech Innovate",
+                testimonial: "L'équipe d'AFH Agency a complètement transformé notre présence en ligne. Notre trafic a augmenté de 150% en seulement trois mois !",
+                image: "https://randomuser.me/api/portraits/women/12.jpg"
+              },
+              {
+                name: "Thomas Martin",
+                company: "EcoStart",
+                testimonial: "Professionnalisme, créativité et réactivité. Trois mots qui définissent parfaitement l'expérience de travail avec AFH Agency.",
+                image: "https://randomuser.me/api/portraits/men/32.jpg"
+              },
+              {
+                name: "Julie Legrand",
+                company: "Mode & Style",
+                testimonial: "Notre boutique en ligne a vu ses conversions augmenter de 75% après la refonte réalisée par AFH Agency. Un investissement qui a rapidement porté ses fruits.",
+                image: "https://randomuser.me/api/portraits/women/45.jpg"
+              }
+            ].map((testimonial, index) => (
+              <div key={index} className="glass-card rounded-xl p-6 text-center">
+                <div className="flex justify-center mb-4">
+                  <img 
+                    src={testimonial.image} 
+                    alt={testimonial.name} 
+                    className="h-20 w-20 rounded-full object-cover border-2 border-afh"
+                  />
+                </div>
+                <p className="italic text-muted-foreground mb-4">"{testimonial.testimonial}"</p>
+                <h4 className="font-semibold">{testimonial.name}</h4>
+                <p className="text-sm text-afh">{testimonial.company}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

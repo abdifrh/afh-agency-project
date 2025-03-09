@@ -24,12 +24,12 @@ export default function Navigation() {
   }, []);
 
   const navLinks = [
-    { name: "Accueil", path: "/", emoji: "🏠" },
-    { name: "Services", path: "/services", emoji: "⚙️" },
-    { name: "Articles", path: "/articles", emoji: "📝" },
-    { name: "Portfolio", path: "/portfolio", emoji: "💼" },
-    { name: "À propos", path: "/about", emoji: "ℹ️" },
-    { name: "Contact", path: "/contact", emoji: "✉️" },
+    { name: "Accueil", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "Articles", path: "/articles" },
+    { name: "Portfolio", path: "/portfolio" },
+    { name: "À propos", path: "/about" },
+    { name: "Contact", path: "/contact" },
   ];
 
   const closeMenu = () => setIsMenuOpen(false);
@@ -40,7 +40,7 @@ export default function Navigation() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled 
           ? "glass py-3 shadow-md" 
-          : "bg-transparent py-5"
+          : "py-5 bg-transparent"
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -66,7 +66,6 @@ export default function Navigation() {
                     : "hover:text-afh"
                 )}
               >
-                <span>{link.emoji}</span>
                 <span>{link.name}</span>
               </Link>
             ))}
@@ -101,13 +100,12 @@ export default function Navigation() {
                 to={link.path}
                 onClick={closeMenu}
                 className={cn(
-                  "block px-4 py-3 rounded-md text-center transition-all duration-300 flex items-center justify-center space-x-2",
+                  "block px-4 py-3 rounded-md text-center transition-all duration-300 flex items-center justify-center",
                   location.pathname === link.path
                     ? "bg-afh/10 text-afh font-semibold"
                     : "hover:bg-afh/5 hover:scale-105"
                 )}
               >
-                <span>{link.emoji}</span>
                 <span>{link.name}</span>
               </Link>
             ))}
