@@ -107,27 +107,27 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    title: "Artisan Coffee",
+    title: "La Piazzetta - Flyer carte des menus",
     category: "branding",
-    description: "Identité visuelle complète pour une chaîne de cafés artisanaux.",
-    image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    client: "Café Artisan",
-    slug: "artisan-coffee",
-    year: "2022",
-    tags: ["Branding", "Identité visuelle", "Packaging", "Print"],
-    challenge: "Créer une identité de marque distinctive et authentique pour une nouvelle chaîne de cafés artisanaux, reflétant leur engagement pour le café de spécialité et les méthodes traditionnelles.",
-    solution: "Développement d'une identité visuelle complète, incluant logo, typographie personnalisée, palette de couleurs terreuses et textures inspirées du café. Création de packagings écologiques et de supports de communication cohérents.",
-    results: "La marque s'est rapidement distinguée sur un marché concurrentiel. Reconnaissance immédiate avec 85% des clients citant l'identité visuelle comme facteur de différenciation majeur.",
+    description: "Création de flyers et menus élégants pour sublimer l’identité visuelle de La Piazzetta.",
+    image: "/img/projects/1518057111178.jpg",
+    client: "La Piazzetta",
+    slug: "la-piazzetta-flyer-carte-menus",
+    year: "2024",
+    tags: ["Branding", "Identité visuelle", "Flyer", "Print"],
+    challenge: "La Piazzetta, un restaurant italien, souhaitait moderniser ses supports de communication tout en conservant l’élégance et l’authenticité de son identité visuelle. L’objectif était de créer des flyers et des cartes de menu attrayants, clairs et engageants pour améliorer l’expérience client et booster la visibilité du restaurant.",
+    solution: "Nous avons conçu des supports graphiques en mettant en avant l’authenticité des plats et l’ambiance chaleureuse du restaurant. Le design intègre des éléments visuels rappelant l’Italie, une typographie élégante et une mise en page structurée pour une lecture fluide.",
+    results: "Des flyers impactants qui attirent l’attention et incitent à la découverte du restaurant. Des cartes de menus modernes, faciles à lire et mettant en valeur les spécialités de La Piazzetta. Une meilleure cohérence visuelle qui renforce l’image de marque et améliore l’expérience client sur place.",
     technologies: ["Adobe Creative Suite", "Illustrator", "Photoshop", "InDesign"],
     testimonial: {
       content: "L'identité visuelle créée capture parfaitement l'essence de notre marque - artisanale, authentique et passionnée. Elle nous aide à raconter notre histoire sans même dire un mot.",
       author: "Antoine Lefèvre",
-      position: "Fondateur, Café Artisan"
+      position: "Fondateur, La Piazzetta"
     },
     gallery: [
-      "https://images.unsplash.com/photo-1518057111178-44a106bad149?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1511537190424-bbbab87ac5eb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1442512595331-e89e73853f31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      "/img/projects/1518057111178.jpg",
+      "/img/projects/1518435461178.jpg",
+      "/img/projects/1556467641178.jpg"
     ],
     nextProject: "evergreen-solutions",
     prevProject: "urban-mobility"
