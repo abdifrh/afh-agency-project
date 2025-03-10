@@ -60,34 +60,7 @@ const Portfolio = () => {
       image: "/img/projects/1515465723425.jpg",
       client: "Taxi Etoile Séléstat",
       slug: "site-web-taxi-etoile-selestat"
-    },
-    {
-      id: 6,
-      title: "Panorama Hotels",
-      category: "site-web",
-      description: "Plateforme de réservation pour une chaîne d'hôtels de luxe avec expérience utilisateur optimisée.",
-      image: "https://images.unsplash.com/photo-1596436889106-be35e843f974?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      client: "Panorama Group",
-      slug: "panorama-hotels"
-    },
-    {
-      id: 7,
-      title: "FreshMarket",
-      category: "e-commerce",
-      description: "Marketplace en ligne pour produits alimentaires locaux et bio.",
-      image: "https://images.unsplash.com/photo-1608686207856-001b95cf60ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      client: "Fresh Co.",
-      slug: "fresh-market"
-    },
-    {
-      id: 8,
-      title: "NovaTech",
-      category: "branding",
-      description: "Refonte complète de l'identité de marque pour une entreprise technologique.",
-      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      client: "Nova Innovations",
-      slug: "novatech"
-    },
+    }
   ];
 
   const filteredProjects = activeFilter === "tous" 

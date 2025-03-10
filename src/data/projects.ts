@@ -141,60 +141,6 @@ export const projects: Project[] = [
     ],
     nextProject: "artisan-coffee",
     prevProject: "la-piazzetta-flyer-carte-menus"
-  },
-  {
-    id: 6,
-    title: "Panorama Hotels",
-    category: "site-web",
-    description: "Plateforme de réservation pour une chaîne d'hôtels de luxe avec expérience utilisateur optimisée.",
-    image: "https://images.unsplash.com/photo-1596436889106-be35e843f974?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    client: "Panorama Group",
-    slug: "panorama-hotels",
-    year: "2023",
-    tags: ["Site Web", "Réservation", "Hôtellerie", "Luxe", "UX"],
-    challenge: "Créer une plateforme de réservation en ligne reflétant l'expérience de luxe des hôtels Panorama, avec un système de réservation intuitif et des visuels immersifs.",
-    solution: "Développement d'un site web avec des animations fluides et des transitions élégantes, intégrant un système de réservation avancé avec visualisation en 3D des chambres et des espaces communs. Implémentation d'un système de recommandation personnalisé basé sur les préférences des clients.",
-    results: "Augmentation de 70% des réservations directes en ligne, réduisant la dépendance aux plateformes tierces. Amélioration de 40% du taux de conversion des visiteurs en clients.",
-    technologies: ["Next.js", "Three.js", "Strapi CMS", "PostgreSQL", "Netlify"],
-    testimonial: {
-      content: "Notre nouvelle plateforme de réservation offre une expérience digitale à la hauteur de notre service hôtelier. L'élégance du design et la fluidité du processus de réservation impressionnent régulièrement nos clients.",
-      author: "Philippe Moreau",
-      position: "Directeur Digital, Panorama Group"
-    },
-    gallery: [
-      "https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-    ],
-    nextProject: "fresh-market",
-    prevProject: "evergreen-solutions"
-  },
-  {
-    id: 7,
-    title: "FreshMarket",
-    category: "e-commerce",
-    description: "Marketplace en ligne pour produits alimentaires locaux et bio.",
-    image: "https://images.unsplash.com/photo-1608686207856-001b95cf60ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    client: "Fresh Co.",
-    slug: "fresh-market",
-    year: "2022",
-    tags: ["E-commerce", "Marketplace", "Bio", "Local"],
-    challenge: "Développer une plateforme de commerce en ligne connectant les producteurs locaux et bio directement aux consommateurs, avec gestion des vendeurs multiples, livraisons et système de paiement sécurisé.",
-    solution: "Création d'une marketplace complète avec espaces vendeurs personnalisés, système de géolocalisation pour trouver les producteurs à proximité, et fonctionnalités de planification de livraison avancées. Implémentation d'un système de notation et d'avis pour renforcer la confiance.",
-    results: "Plus de 300 producteurs locaux inscrits dans les 6 premiers mois et 28 000 utilisateurs actifs. Contribution à la réduction de 40% de l'empreinte carbone liée à la distribution alimentaire pour les utilisateurs de la plateforme.",
-    technologies: ["Shopify", "React", "Node.js", "MongoDB", "Google Maps API"],
-    testimonial: {
-      content: "FreshMarket nous a permis d'atteindre des clients que nous n'aurions jamais pu toucher avec nos méthodes traditionnelles. L'interface est aussi simple pour nous producteurs que pour les clients.",
-      author: "Jean Dupont",
-      position: "Agriculteur Bio, Membre de Fresh Co."
-    },
-    gallery: [
-      "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1488459716781-31db52582fe9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-    ],
-    nextProject: "novatech",
-    prevProject: "panorama-hotels"
   }
 ];
 
