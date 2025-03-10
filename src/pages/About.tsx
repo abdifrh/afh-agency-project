@@ -2,29 +2,6 @@
 import { User, Code, Lightbulb, Target, Users, Award } from "lucide-react";
 
 const About = () => {
-  const team = [
-    {
-      name: "Alex Dupont",
-      role: "Directeur Créatif",
-      image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-    {
-      name: "Sophie Martin",
-      role: "Développeuse Senior",
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-    {
-      name: "Thomas Lefebvre",
-      role: "UI/UX Designer",
-      image: "https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-    {
-      name: "Marie Dubois",
-      role: "Responsable Marketing",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-    },
-  ];
-
   const values = [
     {
       icon: <Lightbulb className="h-6 w-6 text-afh" />,
@@ -46,6 +23,57 @@ const About = () => {
       title: "Qualité",
       description: "La qualité est au cœur de notre approche, dans chaque ligne de code et chaque pixel."
     },
+  ];
+
+  const testimonials = [
+    {
+      name: "Sophie Dupont",
+      company: "Tech Innovate",
+      testimonial: "L'équipe d'AFH Agency a complètement transformé notre présence en ligne. Notre trafic a augmenté de 150% en seulement trois mois !",
+      image: "https://randomuser.me/api/portraits/women/12.jpg"
+    },
+    {
+      name: "Thomas Martin",
+      company: "EcoStart",
+      testimonial: "Professionnalisme, créativité et réactivité. Trois mots qui définissent parfaitement l'expérience de travail avec AFH Agency.",
+      image: "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    {
+      name: "Julie Legrand",
+      company: "Mode & Style",
+      testimonial: "Notre boutique en ligne a vu ses conversions augmenter de 75% après la refonte réalisée par AFH Agency. Un investissement qui a rapidement porté ses fruits.",
+      image: "https://randomuser.me/api/portraits/women/45.jpg"
+    },
+    {
+      name: "Maxime Durand",
+      company: "Digital Solutions",
+      testimonial: "Grâce au référencement naturel mis en place par AFH Agency, notre site web est maintenant en première page de Google. Notre visibilité a explosé et nos leads ont triplé !",
+      image: "https://randomuser.me/api/portraits/men/22.jpg"
+    },
+    {
+      name: "Claire Fontaine",
+      company: "Artisan Créations",
+      testimonial: "AFH Agency a su comprendre l'essence de notre marque artisanale et l'a parfaitement traduite dans notre site e-commerce. Nos ventes en ligne ont doublé !",
+      image: "https://randomuser.me/api/portraits/women/28.jpg"
+    },
+    {
+      name: "Pierre Moreau",
+      company: "Consulting Group",
+      testimonial: "Le développement de notre application web par AFH Agency a transformé notre façon de travailler. L'interface intuitive et la performance sont impressionnantes.",
+      image: "https://randomuser.me/api/portraits/men/36.jpg"
+    },
+    {
+      name: "Nathalie Bernard",
+      company: "Green Earth",
+      testimonial: "Le travail de référencement SEO effectué par AFH Agency nous a permis d'atteindre une audience que nous n'aurions jamais pu toucher auparavant. Résultats exceptionnels !",
+      image: "https://randomuser.me/api/portraits/women/67.jpg"
+    },
+    {
+      name: "Antoine Leroy",
+      company: "StartupLab",
+      testimonial: "En tant que startup, notre budget était limité mais AFH Agency a su nous proposer une solution évolutive qui s'adapte à notre croissance. Partenaire de confiance !",
+      image: "https://randomuser.me/api/portraits/men/45.jpg"
+    }
   ];
 
   return (
@@ -111,112 +139,32 @@ const About = () => {
           </div>
         </div>
 
-        {/* Timeline */}
+        {/* Testimonials */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Notre Parcours</h2>
+            <h2 className="text-3xl font-bold mb-4">Ce que disent nos clients</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              L'évolution de AFH Agency à travers les années
-            </p>
-          </div>
-          
-          <div className="relative mx-auto max-w-3xl">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-border"></div>
-            
-            {/* Timeline Items */}
-            {[
-              {
-                year: "2018",
-                title: "Fondation de AFH Agency",
-                description: "Démarrage dans un petit bureau avec 3 fondateurs passionnés."
-              },
-              {
-                year: "2019",
-                title: "Premier client majeur",
-                description: "Signature d'un contrat avec une entreprise du CAC 40."
-              },
-              {
-                year: "2021",
-                title: "Expansion de l'équipe",
-                description: "L'équipe s'agrandit à 15 collaborateurs talentueux."
-              },
-              {
-                year: "2023",
-                title: "Nouveaux bureaux",
-                description: "Déménagement dans des locaux plus grands au cœur de la ville."
-              },
-              {
-                year: "2024",
-                title: "Prix d'excellence",
-                description: "Reconnaissance de l'industrie pour nos designs innovants."
-              }
-            ].map((item, index) => (
-              <div 
-                key={index} 
-                className={`relative flex items-center mb-12 ${
-                  index % 2 === 0 ? "flex-row-reverse" : ""
-                }`}
-              >
-                <div className={`w-1/2 px-8 ${index % 2 === 0 ? "text-right" : "text-left"}`}>
-                  <div className="glass px-3 py-1 rounded-full text-sm font-medium text-afh inline-block mb-2">
-                    {item.year}
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </div>
-                
-                <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-afh z-10"></div>
-                
-                <div className="w-1/2"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Team */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Notre Équipe</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Des professionnels talentueux et passionnés
+              Découvrez les expériences de ceux qui nous ont fait confiance
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {team.map((member, index) => (
+            {testimonials.map((testimonial, index) => (
               <div 
                 key={index} 
-                className="glass-card rounded-xl overflow-hidden group animate-fade-in"
+                className="glass-card rounded-xl p-6 text-center hover:scale-105 transition-transform duration-300 animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="aspect-square relative overflow-hidden">
+                <div className="flex justify-center mb-4">
                   <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    src={testimonial.image} 
+                    alt={testimonial.name} 
+                    className="h-20 w-20 rounded-full object-cover border-2 border-afh"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="p-4 w-full">
-                      <div className="flex justify-center gap-3">
-                        {["twitter", "linkedin", "github"].map((social) => (
-                          <a 
-                            key={social} 
-                            href="#" 
-                            className="glass p-2 rounded-full hover:bg-afh/20 transition-colors"
-                          >
-                            <span className="sr-only">{social}</span>
-                            <User className="h-4 w-4" />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
                 </div>
-                <div className="p-5 text-center">
-                  <h3 className="font-bold text-lg">{member.name}</h3>
-                  <p className="text-muted-foreground text-sm">{member.role}</p>
-                </div>
+                <p className="italic text-muted-foreground mb-4">"{testimonial.testimonial}"</p>
+                <h4 className="font-semibold">{testimonial.name}</h4>
+                <p className="text-sm text-afh">{testimonial.company}</p>
               </div>
             ))}
           </div>
