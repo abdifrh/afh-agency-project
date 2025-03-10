@@ -91,13 +91,15 @@ const About = () => {
                   Façonner l'avenir <span className="text-afh">digital</span>
                 </h1>
                 <p className="text-muted-foreground">
-                  Fondée en 2018, AFH Agency est née de la passion commune de trois amis pour le design et la technologie. 
-                  Notre mission est simple : créer des expériences digitales exceptionnelles qui connectent les marques à 
-                  leur audience de manière authentique et mémorable.
+                Fondée en 2018, AFH Agency est née de ma passion pour le design et la technologie.
+                Dès le départ, mon objectif était clair : aider les entreprises à se démarquer en ligne
+                avec des expériences digitales uniques et impactantes.
                 </p>
                 <p className="text-muted-foreground">
-                  Avec une équipe diversifiée de créatifs, développeurs et stratèges, nous avons aidé 
-                  plus de 50 entreprises à transformer leur présence digitale et à atteindre leurs objectifs.
+                Au fil des années, l'agence s'est développée, rassemblant une équipe de talents créatifs,
+                développeurs et stratèges partageant la même vision.
+                Aujourd'hui, nous avons accompagné plus de 50 entreprises dans leur transformation digitale,
+                en leur offrant des solutions sur mesure pour renforcer leur présence en ligne et atteindre leurs objectifs.
                 </p>
               </div>
               <div className="relative">

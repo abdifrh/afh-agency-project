@@ -69,7 +69,7 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <MapPin className="h-5 w-5 text-afh" />,
-      title: "Notre adresse",
+      title: "Lieu",
       details: "Strasbourg, France",
     },
     {
@@ -232,7 +232,7 @@ const Contact = () => {
                 <div>
                   <h3 className="font-medium text-white/90 mb-3">Horaires d'ouverture ⏰</h3>
                   <div className="text-white/70 space-y-2">
-                    <p>Lundi - Vendredi: 9h00 - 18h00</p>
+                    <p>Lundi - Samedi: 9h00 - 18h00</p>
                     <p>Weekend: Fermé</p>
                   </div>
                 </div>
