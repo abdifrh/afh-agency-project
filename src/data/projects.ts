@@ -130,16 +130,11 @@ export const projects: Project[] = [
     solution: "Développement d’un site vitrine épuré et intuitif, optimisé pour mobile et ordinateur, avec une navigation fluide, des appels à l’action clairs et un design en harmonie avec l’identité visuelle de l’entreprise.",
     results: "Une visibilité renforcée, une meilleure accessibilité pour les clients, et un outil efficace pour générer des réservations et fidéliser la clientèle.",
     technologies: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
-    testimonial: {
-      content: "Urban Mobility a transformé la façon dont nos citoyens se déplacent. La facilité d'utilisation de l'application et la richesse des options de transport proposées en font un outil essentiel pour une ville plus verte.",
-      author: "Marie Dubois",
-      position: "Responsable Innovation, CityMove"
-    },
     gallery: [
       "/img/projects/1515465723425.jpg",
       "/img/projects/1457657638425.jpg"
     ],
-    nextProject: "artisan-coffee",
+    nextProject: "",
     prevProject: "la-piazzetta-flyer-carte-menus"
   }
 ];

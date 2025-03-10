@@ -20,15 +20,15 @@ const LegalMentions = () => {
             <p className="mb-2"><strong>Adresse :</strong> Strasbourg, France</p>
             <p className="mb-2"><strong>Téléphone :</strong> +33 7 50 01 58 96</p>
             <p className="mb-2"><strong>Email :</strong> contact@afh-agency.com</p>
-            <p className="mb-2"><strong>SIRET :</strong> [Numéro SIRET]</p>
-            <p className="mb-2"><strong>Directeur de la publication :</strong> [Nom du Directeur]</p>
+            <p className="mb-2"><strong>SIRET :</strong> 84149095600015</p>
+            <p className="mb-2"><strong>Directeur de la publication :</strong> Abdi FARAH</p>
           </section>
 
           <section>
             <h2 className="text-2xl font-semibold mb-4">Hébergement</h2>
-            <p className="mb-2"><strong>Nom de l'hébergeur :</strong> [Nom de l'hébergeur]</p>
-            <p className="mb-2"><strong>Adresse :</strong> [Adresse de l'hébergeur]</p>
-            <p className="mb-2"><strong>Téléphone :</strong> [Téléphone de l'hébergeur]</p>
+            <p className="mb-2"><strong>Nom de l'hébergeur :</strong> IONOS by 1&1</p>
+            <p className="mb-2"><strong>Adresse :</strong> 7 PLACE DE LA GARE, 57200 SARREGUEMINES</p>
+            <p className="mb-2"><strong>Téléphone :</strong> +33 9 70 80 89 11</p>
           </section>
 
           <section>
