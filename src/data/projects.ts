@@ -26,56 +26,42 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Lumina Fashion",
-    category: "e-commerce",
-    description: "Boutique en ligne de mode avec une expérience d'achat immersive et intuitive.",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    client: "Lumina",
-    slug: "lumina-fashion",
-    year: "2023",
-    tags: ["E-commerce", "UX/UI", "Responsive", "Paiement en ligne"],
-    challenge: "Créer une expérience d'achat en ligne qui reflète l'élégance et la sophistication de la marque Lumina tout en garantissant une navigation fluide et une conversion optimale des visiteurs.",
-    solution: "Nous avons développé une plateforme e-commerce sur mesure avec une architecture centrée sur l'expérience utilisateur. L'interface minimaliste met en valeur les produits avec des animations subtiles et un système de filtrage avancé pour une recherche facile.",
-    results: "Une augmentation de 45% du taux de conversion et une réduction de 30% du taux d'abandon de panier dans les trois mois suivant le lancement. Le temps moyen passé sur le site a augmenté de 2 minutes.",
-    technologies: ["React", "Node.js", "Stripe", "MongoDB", "AWS"],
-    testimonial: {
-      content: "L'équipe a parfaitement compris notre vision et a créé une boutique en ligne qui non seulement reflète l'essence de notre marque, mais améliore aussi significativement notre présence sur le marché digital.",
-      author: "Sophie Martin",
-      position: "Directrice Marketing, Lumina"
-    },
+    title: "Taxi Etoile Séléstat - Carte de visite",
+    category: "branding",
+    description: "Création de cartes de visite professionnelles et percutantes pour un taxi à Sélestat.",
+    image: "/img/projects/1334654638.jpg",
+    client: "Taxi Etoile Séléstat",
+    slug: "taxi-etoile-selestat-carte-visite",
+    year: "2025",
+    tags: ["Branding", "Identité visuelle", "Carte de visite", "Print"],
+    challenge: "Fournir un support de communication efficace et élégant, en adéquation avec l’identité visuelle du taxi, pour faciliter la prise de contact et renforcer la notoriété.",
+    solution: "Conception de cartes de visite recto-verso avec un design équilibré : un côté jaune et un côté noir, respectant l’image du service tout en assurant une lisibilité optimale des informations.",
+    results: "Une image de marque renforcée, une meilleure mémorisation auprès des clients et une carte de visite distinctive qui inspire confiance et professionnalisme.",
+    technologies: ["Adobe Creative Suite", "Illustrator", "Photoshop", "InDesign"],
     gallery: [
-      "https://images.unsplash.com/photo-1607082349566-187342175e2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      "/img/projects/1334654638.jpg"
     ],
     nextProject: "fresh-market",
-    prevProject: "novatech"
+    prevProject: "indian-burger-carte-fidelite"
   },
   {
     id: 2,
-    title: "Evergreen Solutions",
-    category: "site-web",
-    description: "Site vitrine pour une entreprise de solutions écologiques innovantes.",
-    image: "https://images.unsplash.com/photo-1545128485-c400ce7b17d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    title: "Indian Burger - Carte de fidélité",
+    category: "branding",
+    description: "Création de cartes de fidélité aux couleurs d'Indian Burger pour booster la rétention client.",
+    image: "/img/projects/1325645638.jpg",
     client: "Evergreen",
-    slug: "evergreen-solutions",
-    year: "2022",
-    tags: ["Site Vitrine", "Écologie", "One-Page", "Animations"],
-    challenge: "Concevoir un site web qui transmet l'engagement d'Evergreen Solutions pour l'environnement tout en présentant leurs services de manière claire et impactante.",
-    solution: "Création d'un site one-page avec des sections bien définies, utilisant des animations à l'apparition pour engager les visiteurs. Une palette de couleurs naturelles et des visuels inspirés de la nature renforcent l'identité écologique de la marque.",
-    results: "Le site a généré une augmentation de 60% des demandes de devis et a été salué pour son design innovant dans plusieurs publications spécialisées en développement durable.",
-    technologies: ["HTML5", "CSS3", "JavaScript", "GSAP", "WordPress"],
-    testimonial: {
-      content: "Notre nouveau site reflète parfaitement notre mission et nos valeurs. Il a transformé notre façon de communiquer avec notre public cible.",
-      author: "Thomas Durant",
-      position: "CEO, Evergreen Solutions"
-    },
+    slug: "indian-burger-carte-fidelite",
+    year: "2025",
+    tags: ["Branding", "Identité visuelle", "Carte de fidélitié", "Print"],
+    challenge: "Développer un support de fidélisation attractif et en cohérence avec l’identité visuelle du snack, tout en encourageant les clients à revenir régulièrement.",
+    solution: "Conception de cartes de fidélité au design dynamique, en jaune pour respecter l’image de marque existante, avec une mise en page claire et incitative.",
+    results: "Une meilleure fidélisation des clients, un engagement renforcé et une augmentation des visites grâce à une carte pratique et visuellement impactante.",
+    technologies: ["Adobe Creative Suite", "Illustrator", "Photoshop", "InDesign"],
     gallery: [
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      "/img/projects/1325645638.jpg"
     ],
-    nextProject: "panorama-hotels",
+    nextProject: "taxi-etoile-selestat-carte-visite",
     prevProject: "la-piazzetta-carte-fidelite"
   },
   {
@@ -87,7 +73,7 @@ export const projects: Project[] = [
     client: "La Piazzetta",
     slug: "la-piazzetta-carte-fidelite",
     year: "2024",
-    tags: ["Branding", "Identité visuelle", "Flyer", "Print"],
+    tags: ["Branding", "Identité visuelle", "Carte de fidélité", "Print"],
     challenge: "Créer des cartes de fidélité esthétiques et pratiques, en accord avec l’image de La Piazzetta, tout en incitant les clients à revenir régulièrement.",
     solution: "Design élégant et cohérent avec l’identité visuelle du restaurant, impression de qualité et format pratique pour une utilisation quotidienne.",
     results: "Une augmentation de la fidélisation client grâce à un support attractif et fonctionnel, renforçant la relation entre le restaurant et sa clientèle.",
@@ -100,7 +86,7 @@ export const projects: Project[] = [
     gallery: [
       "/img/projects/1518456343338.jpg"
     ],
-    nextProject: "evergreen-solutions",
+    nextProject: "indian-burger-carte-fidelite",
     prevProject: "la-piazzetta-flyer-carte-menus"
   },
   {
@@ -210,33 +196,6 @@ export const projects: Project[] = [
     ],
     nextProject: "novatech",
     prevProject: "panorama-hotels"
-  },
-  {
-    id: 8,
-    title: "NovaTech",
-    category: "branding",
-    description: "Refonte complète de l'identité de marque pour une entreprise technologique.",
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    client: "Nova Innovations",
-    slug: "novatech",
-    year: "2022",
-    tags: ["Branding", "Identité visuelle", "Tech", "Modernisation"],
-    challenge: "Moderniser l'identité visuelle d'une entreprise technologique établie depuis 20 ans pour refléter son évolution vers l'innovation tout en préservant sa réputation de fiabilité et d'expertise.",
-    solution: "Refonte complète de l'identité de marque avec création d'un nouveau logo épuré, une typographie personnalisée, une palette de couleurs moderne, et développement d'un système de design cohérent pour toutes les communications numériques et imprimées.",
-    results: "Augmentation de 45% de la reconnaissance de marque dans les études post-refonte. Perception de la marque significativement améliorée, notamment auprès des jeunes talents et des clients des secteurs émergents.",
-    technologies: ["Adobe Creative Suite", "Figma", "After Effects", "Blender 3D"],
-    testimonial: {
-      content: "La nouvelle identité visuelle nous a permis de nous repositionner sur le marché. Nous sommes désormais perçus comme l'entreprise innovante que nous sommes vraiment, tout en conservant la confiance établie avec nos clients historiques.",
-      author: "Alexandre Chen",
-      position: "PDG, Nova Innovations"
-    },
-    gallery: [
-      "https://images.unsplash.com/photo-1581287053822-fd7bf4f4bfec?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-    ],
-    nextProject: "lumina-fashion",
-    prevProject: "fresh-market"
   }
 ];
 

@@ -18,21 +18,21 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "Lumina Fashion",
-      category: "e-commerce",
-      description: "Boutique en ligne de mode avec une expérience d'achat immersive et intuitive.",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      client: "Lumina",
-      slug: "lumina-fashion"
+      title: "Taxi Etoile Séléstat - Carte de visite",
+      category: "branding",
+      description: "Création de cartes de visite professionnelles et percutantes pour un taxi à Sélestat.",
+      image: "/img/projects/1334654638.jpg",
+      client: "Taxi Etoile Séléstat",
+      slug: "taxi-etoile-selestat-carte-visite"
     },
     {
       id: 2,
-      title: "Evergreen Solutions",
-      category: "site-web",
-      description: "Site vitrine pour une entreprise de solutions écologiques innovantes.",
-      image: "https://images.unsplash.com/photo-1545128485-c400ce7b17d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      client: "Evergreen",
-      slug: "evergreen-solutions"
+      title: "Indian Burger - Carte de fidélité",
+      category: "branding",
+      description: "Création de cartes de fidélité aux couleurs d'Indian Burger pour booster la rétention client.",
+      image: "/img/projects/1325645638.jpg",
+      client: "Indian Burger",
+      slug: "indian-burger-carte-fidelite"
     },
     {
       id: 3,
