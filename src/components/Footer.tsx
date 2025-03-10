@@ -119,11 +119,11 @@ const Footer = () => {
             &copy; {currentYear} AFH Agency. Tous droits réservés.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <Link to="/about" className="text-sm text-muted-foreground hover:text-afh transition-colors">
+            <Link to="/mentions-legales" className="text-sm text-muted-foreground hover:text-afh transition-colors">
               Mentions légales
             </Link>
             <span className="text-muted-foreground">|</span>
-            <Link to="/about" className="text-sm text-muted-foreground hover:text-afh transition-colors">
+            <Link to="/politique-de-confidentialite" className="text-sm text-muted-foreground hover:text-afh transition-colors">
               Politique de confidentialité
             </Link>
           </div>
