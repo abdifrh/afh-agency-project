@@ -26,7 +26,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Taxi Etoile Séléstat - Carte de visite",
+    title: "Carte de visite",
     category: "branding",
     description: "Création de cartes de visite professionnelles et percutantes pour un taxi à Sélestat.",
     image: "/img/projects/1334654638.jpg",
@@ -41,16 +41,16 @@ export const projects: Project[] = [
     gallery: [
       "/img/projects/1334654638.jpg"
     ],
-    nextProject: "fresh-market",
-    prevProject: "indian-burger-carte-fidelite"
+    nextProject: "indian-burger-carte-fidelite",
+    prevProject: ""
   },
   {
     id: 2,
-    title: "Indian Burger - Carte de fidélité",
+    title: "Carte de fidélité",
     category: "branding",
     description: "Création de cartes de fidélité aux couleurs d'Indian Burger pour booster la rétention client.",
     image: "/img/projects/1325645638.jpg",
-    client: "Evergreen",
+    client: "Indian Burger",
     slug: "indian-burger-carte-fidelite",
     year: "2025",
     tags: ["Branding", "Identité visuelle", "Carte de fidélitié", "Print"],
@@ -61,12 +61,12 @@ export const projects: Project[] = [
     gallery: [
       "/img/projects/1325645638.jpg"
     ],
-    nextProject: "taxi-etoile-selestat-carte-visite",
-    prevProject: "la-piazzetta-carte-fidelite"
+    nextProject: "la-piazzetta-carte-fidelite",
+    prevProject: "taxi-etoile-selestat-carte-visite"
   },
   {
     id: 3,
-    title: "La Piazzetta - Carte de fidélité",
+    title: "Carte de fidélité",
     category: "branding",
     description: "Conception de cartes de fidélité attractives pour renforcer l’engagement des clients de La Piazzetta.",
     image: "/img/projects/1518456343338.jpg",
@@ -86,12 +86,12 @@ export const projects: Project[] = [
     gallery: [
       "/img/projects/1518456343338.jpg"
     ],
-    nextProject: "indian-burger-carte-fidelite",
-    prevProject: "la-piazzetta-flyer-carte-menus"
+    nextProject: "la-piazzetta-flyer-carte-menus",
+    prevProject: "indian-burger-carte-fidelite"
   },
   {
     id: 4,
-    title: "La Piazzetta - Flyer carte des menus",
+    title: "Flyer carte des menus",
     category: "branding",
     description: "Création de flyers et menus élégants pour sublimer l’identité visuelle de La Piazzetta.",
     image: "/img/projects/1518057111178.jpg",
@@ -113,35 +113,34 @@ export const projects: Project[] = [
       "/img/projects/1518435461178.jpg",
       "/img/projects/1556467641178.jpg"
     ],
-    nextProject: "la-piazzetta-carte-fidelite",
-    prevProject: "urban-mobility"
+    nextProject: "site-web-taxi-etoile-selestat",
+    prevProject: "la-piazzetta-carte-fidelite"
   },
   {
     id: 5,
-    title: "Urban Mobility",
-    category: "application",
-    description: "Application de mobilité urbaine avec services de location et navigation.",
-    image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    client: "CityMove",
-    slug: "urban-mobility",
-    year: "2023",
-    tags: ["Application Mobile", "Mobilité", "Géolocalisation", "React Native"],
-    challenge: "Développer une solution de mobilité urbaine intégrant différents modes de transport partagés (vélos, trottinettes, voitures) avec un système de réservation et de navigation en temps réel.",
-    solution: "Création d'une application mobile cross-platform avec React Native, intégrant des API de cartographie et de géolocalisation avancées, un système de paiement sécurisé et une interface minimaliste pour une utilisation intuitive même en déplacement.",
-    results: "L'application est désormais utilisée dans 5 grandes villes européennes avec plus de 200 000 utilisateurs actifs mensuels. Réduction mesurée de 15% de l'empreinte carbone liée aux déplacements urbains des utilisateurs.",
-    technologies: ["React Native", "MapBox API", "Node.js", "MongoDB", "Stripe"],
+    title: "Site vitrine",
+    category: "site-web",
+    description: "Création d’un site vitrine moderne et fonctionnel pour Taxi Étoile Sélestat, facilitant la réservation et la mise en relation avec les clients.",
+    image: "/img/projects/1515465723425.jpg",
+    client: "Taxi Etoile Séléstat",
+    slug: "site-web-taxi-etoile-selestat",
+    year: "2025",
+    tags: ["Site vitrine", "Responsive", "Taxi", "Séléstat", "UX"],
+    challenge: "Offrir une présence en ligne professionnelle et accessible, permettant aux clients de découvrir les services, de réserver facilement et d’obtenir rapidement les informations essentielles.",
+    solution: "Développement d’un site vitrine épuré et intuitif, optimisé pour mobile et ordinateur, avec une navigation fluide, des appels à l’action clairs et un design en harmonie avec l’identité visuelle de l’entreprise.",
+    results: "Une visibilité renforcée, une meilleure accessibilité pour les clients, et un outil efficace pour générer des réservations et fidéliser la clientèle.",
+    technologies: ["Vite", "TypeScript", "React", "shadcn-ui", "Tailwind CSS"],
     testimonial: {
       content: "Urban Mobility a transformé la façon dont nos citoyens se déplacent. La facilité d'utilisation de l'application et la richesse des options de transport proposées en font un outil essentiel pour une ville plus verte.",
       author: "Marie Dubois",
       position: "Responsable Innovation, CityMove"
     },
     gallery: [
-      "https://images.unsplash.com/photo-1556767576-5ec41e3239ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1556767576-cf0a4a80e5b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1521118702313-63fca89fe1fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      "/img/projects/1515465723425.jpg",
+      "/img/projects/1457657638425.jpg"
     ],
     nextProject: "artisan-coffee",
-    prevProject: "nutritrack"
+    prevProject: "la-piazzetta-flyer-carte-menus"
   },
   {
     id: 6,
