@@ -2,7 +2,7 @@
 export interface Project {
   id: number;
   title: string;
-  category: 'site-web' | 'e-commerce' | 'application' | 'branding';
+  category: 'site-web' | 'print' | 'digital' | 'branding';
   description: string;
   image: string;
   client: string;
@@ -27,7 +27,7 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "Carte de visite",
-    category: "branding",
+    category: "print",
     description: "Création de cartes de visite professionnelles et percutantes pour un taxi à Sélestat.",
     image: "/img/projects/1334654638.jpg",
     client: "Taxi Etoile Séléstat",
@@ -47,7 +47,7 @@ export const projects: Project[] = [
   {
     id: 2,
     title: "Carte de fidélité",
-    category: "branding",
+    category: "print",
     description: "Création de cartes de fidélité aux couleurs d'Indian Burger pour booster la rétention client.",
     image: "/img/projects/1325645638.jpg",
     client: "Indian Burger",
@@ -67,7 +67,7 @@ export const projects: Project[] = [
   {
     id: 3,
     title: "Carte de fidélité",
-    category: "branding",
+    category: "print",
     description: "Conception de cartes de fidélité attractives pour renforcer l’engagement des clients de La Piazzetta.",
     image: "/img/projects/1518456343338.jpg",
     client: "La Piazzetta",
@@ -92,7 +92,7 @@ export const projects: Project[] = [
   {
     id: 4,
     title: "Flyer carte des menus",
-    category: "branding",
+    category: "print",
     description: "Création de flyers et menus élégants pour sublimer l’identité visuelle de La Piazzetta.",
     image: "/img/projects/1518057111178.jpg",
     client: "La Piazzetta",
@@ -134,8 +134,30 @@ export const projects: Project[] = [
       "/img/projects/1515465723425.jpg",
       "/img/projects/1457657638425.jpg"
     ],
-    nextProject: "",
+    nextProject: "logo-taxi-etoile-selestat",
     prevProject: "la-piazzetta-flyer-carte-menus"
+  },
+  {
+    id: 6,
+    title: "Logo & Identité visuelle",
+    category: "branding",
+    description: "Création d’un logo unique et professionnel pour Taxi Étoile Sélestat, reflétant son identité et sa fiabilité.",
+    image: "/img/projects/155673243235.jpg",
+    client: "Taxi Etoile Séléstat",
+    slug: "logo-taxi-etoile-selestat",
+    year: "2025",
+    tags: ["Site vitrine", "Responsive", "Taxi", "Séléstat", "UX"],
+    challenge: "Concevoir une identité visuelle reconnaissable et moderne, qui véhicule professionnalisme et confiance tout en se démarquant des autres services de taxi.",
+    solution: "Un logo épuré intégrant des éléments évoquant à la fois l’univers du transport et l’étoile, en cohérence avec le nom de l’entreprise. Une palette de couleurs jaune et noir a été utilisée pour rappeler l’univers du taxi et assurer une forte visibilité.",
+    results: "Un logo distinctif et mémorable, renforçant la notoriété de Taxi Étoile Sélestat et facilitant son identification par les clients.",
+    technologies: ["Adobe Creative Suite", "Illustrator", "Photoshop"],
+    gallery: [
+      "/img/projects/155673243235.jpg",
+      "/img/projects/4436563443542.jpg",
+      "/img/projects/4643278689435.jpg"
+    ],
+    nextProject: "",
+    prevProject: "site-web-taxi-etoile-selestat"
   }
 ];
 
