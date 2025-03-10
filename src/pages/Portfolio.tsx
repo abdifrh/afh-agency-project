@@ -10,8 +10,8 @@ const Portfolio = () => {
   const filters = [
     { id: "tous", label: "Tous" },
     { id: "site-web", label: "Sites Web" },
-    { id: "print", label: "E-commerce" },
-    { id: "digital", label: "Applications" },
+    { id: "print", label: "Print" },
+    { id: "digital", label: "Digital" },
     { id: "branding", label: "Branding" },
   ];
 
