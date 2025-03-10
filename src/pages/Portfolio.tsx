@@ -54,12 +54,12 @@ const Portfolio = () => {
     },
     {
       id: 5,
-      title: "Urban Mobility",
-      category: "application",
-      description: "Application de mobilité urbaine avec services de location et navigation.",
-      image: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      client: "CityMove",
-      slug: "urban-mobility"
+      title: "Site vitrine",
+      category: "site-web",
+      description: "Création d’un site vitrine moderne et fonctionnel pour Taxi Étoile Sélestat, facilitant la réservation et la mise en relation avec les clients.",
+      image: "/img/projects/1515465723425.jpg",
+      client: "Taxi Etoile Séléstat",
+      slug: "site-web-taxi-etoile-selestat"
     },
     {
       id: 6,
