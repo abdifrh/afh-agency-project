@@ -76,34 +76,32 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
     ],
     nextProject: "panorama-hotels",
-    prevProject: "artisan-coffee"
+    prevProject: "la-piazzetta-carte-fidelite"
   },
   {
     id: 3,
-    title: "NutriTrack",
-    category: "application",
-    description: "Application de suivi nutritionnel avec des visualisations de données avancées.",
-    image: "https://images.unsplash.com/photo-1575224526797-5730d09d781d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    client: "HealthTech",
-    slug: "nutritrack",
-    year: "2023",
-    tags: ["Application Mobile", "Santé", "Visualisation de données", "Flutter"],
-    challenge: "Développer une application mobile intuitive permettant aux utilisateurs de suivre leur alimentation quotidienne et de visualiser leurs progrès nutritionnels à travers des graphiques compréhensibles.",
-    solution: "Création d'une application cross-platform avec Flutter, intégrant une base de données alimentaire complète, des outils de scan de code-barres et un tableau de bord personnalisé avec des visualisations de données en temps réel.",
-    results: "Plus de 50 000 téléchargements dans le premier mois, avec un taux de rétention de 65% après 30 jours. Note moyenne de 4,7/5 sur les stores d'applications.",
-    technologies: ["Flutter", "Firebase", "RESTful API", "Chart.js", "Machine Learning"],
+    title: "La Piazzetta - Carte de fidélité",
+    category: "branding",
+    description: "Conception de cartes de fidélité attractives pour renforcer l’engagement des clients de La Piazzetta.",
+    image: "/img/projects/1518456343338.jpg",
+    client: "La Piazzetta",
+    slug: "la-piazzetta-carte-fidelite",
+    year: "2024",
+    tags: ["Branding", "Identité visuelle", "Flyer", "Print"],
+    challenge: "Créer des cartes de fidélité esthétiques et pratiques, en accord avec l’image de La Piazzetta, tout en incitant les clients à revenir régulièrement.",
+    solution: "Design élégant et cohérent avec l’identité visuelle du restaurant, impression de qualité et format pratique pour une utilisation quotidienne.",
+    results: "Une augmentation de la fidélisation client grâce à un support attractif et fonctionnel, renforçant la relation entre le restaurant et sa clientèle.",
+    technologies: ["Adobe Creative Suite", "Illustrator", "Photoshop", "InDesign"],
     testimonial: {
-      content: "NutriTrack a révolutionné notre approche du coaching nutritionnel. L'interface intuitive et les visualisations claires permettent à nos clients de mieux comprendre et suivre leurs habitudes alimentaires.",
-      author: "Dr. Julie Blanc",
-      position: "Nutritionniste, HealthTech"
+      content: "L'identité visuelle créée capture parfaitement l'essence de notre marque - artisanale, authentique et passionnée. Elle nous aide à raconter notre histoire sans même dire un mot.",
+      author: "Antoine Lefèvre",
+      position: "Fondateur, La Piazzetta"
     },
     gallery: [
-      "https://images.unsplash.com/photo-1577741314755-048d8525d31e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1626080308512-8d134ddf39e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      "/img/projects/1518456343338.jpg"
     ],
-    nextProject: "urban-mobility",
-    prevProject: "lumina-fashion"
+    nextProject: "evergreen-solutions",
+    prevProject: "la-piazzetta-flyer-carte-menus"
   },
   {
     id: 4,
@@ -129,7 +127,7 @@ export const projects: Project[] = [
       "/img/projects/1518435461178.jpg",
       "/img/projects/1556467641178.jpg"
     ],
-    nextProject: "evergreen-solutions",
+    nextProject: "la-piazzetta-carte-fidelite",
     prevProject: "urban-mobility"
   },
   {

@@ -36,21 +36,21 @@ const Portfolio = () => {
     },
     {
       id: 3,
-      title: "NutriTrack",
-      category: "application",
-      description: "Application de suivi nutritionnel avec des visualisations de données avancées.",
-      image: "https://images.unsplash.com/photo-1575224526797-5730d09d781d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      client: "HealthTech",
-      slug: "nutritrack"
+      title: "La Piazzetta - Carte de fidélité",
+      category: "branding",
+      description: "Conception de cartes de fidélité attractives pour renforcer l’engagement des clients de La Piazzetta.",
+      image: "/img/projects/1518456343338.jpg",
+      client: "La Piazzetta",
+      slug: "la-piazzetta-carte-fidelite"
     },
     {
       id: 4,
-      title: "Artisan Coffee",
+      title: "La Piazzetta - Flyer carte des menus",
       category: "branding",
-      description: "Identité visuelle complète pour une chaîne de cafés artisanaux.",
-      image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      client: "Café Artisan",
-      slug: "artisan-coffee"
+      description: "Création de flyers et menus élégants pour sublimer l’identité visuelle de La Piazzetta.",
+      image: "/img/projects/1518057111178.jpg",
+      client: "La Piazzetta",
+      slug: "la-piazzetta-flyer-carte-menus"
     },
     {
       id: 5,
