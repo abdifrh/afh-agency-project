@@ -1,10 +1,17 @@
 
 import { ArrowRight, Sparkles, CheckCircle, Users, BarChart, Clock, Award } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>AFH Agency | Développement Web et Référencement SEO</title>
+        <meta name="description" content="Transformez votre présence digitale avec AFH Agency. Experts en développement web, SEO et stratégie digitale. Boostez votre visibilité en ligne." />
+        <meta name="keywords" content="développement web, SEO, référencement naturel, site internet, agence web, stratégie digitale, web design" />
+      </Helmet>
+      
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-light dark:bg-gradient-dark pt-16">
         <div className="absolute inset-0 overflow-hidden">
@@ -73,15 +80,15 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Conseil & Stratégie Digitale",
-                description: "Audit digital, élaboration de stratégies sur mesure, planification de la transformation digitale.",
-                icon: "💡",
-                delay: "0ms"
-              },
-              {
                 title: "Développement Web",
                 description: "Sites web personnalisés, applications web, e-commerce, optimisés pour la performance et le référencement.",
                 icon: "💻",
+                delay: "0ms"
+              },
+              {
+                title: "SEO / Référencement Naturel",
+                description: "Stratégies d'optimisation pour les moteurs de recherche, analyse de mots-clés, et amélioration du classement organique.",
+                icon: "🔍",
                 delay: "100ms"
               },
               {
@@ -201,7 +208,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 name: "Sophie Dupont",
@@ -220,6 +227,12 @@ const Index = () => {
                 company: "Mode & Style",
                 testimonial: "Notre boutique en ligne a vu ses conversions augmenter de 75% après la refonte réalisée par AFH Agency. Un investissement qui a rapidement porté ses fruits.",
                 image: "https://randomuser.me/api/portraits/women/45.jpg"
+              },
+              {
+                name: "Maxime Durand",
+                company: "Digital Solutions",
+                testimonial: "Grâce au référencement naturel mis en place par AFH Agency, notre site web est maintenant en première page de Google. Notre visibilité a explosé et nos leads ont triplé !",
+                image: "https://randomuser.me/api/portraits/men/22.jpg"
               }
             ].map((testimonial, index) => (
               <div key={index} className="glass-card rounded-xl p-6 text-center">
