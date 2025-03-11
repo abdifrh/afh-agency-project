@@ -2,14 +2,17 @@
 import { ArrowRight, Sparkles, CheckCircle, Users, BarChart, Clock, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { t, language } = useLanguage();
+
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>AFH Agency | Développement Web et Référencement SEO</title>
-        <meta name="description" content="Transformez votre présence digitale avec AFH Agency. Experts en développement web, SEO et stratégie digitale. Boostez votre visibilité en ligne." />
-        <meta name="keywords" content="développement web, SEO, référencement naturel, site internet, agence web, stratégie digitale, web design" />
+        <title>AFH Agency | Web Development and SEO</title>
+        <meta name="description" content="Transform your digital presence with AFH Agency. Experts in web development, SEO and digital strategy. Boost your online visibility." />
+        <meta name="keywords" content="web development, SEO, natural referencing, website, web agency, digital strategy, web design" />
       </Helmet>
       
       {/* Hero Section */}
@@ -24,21 +27,20 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-slide-up">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Transformez votre <span className="text-afh">présence digitale</span> avec créativité ✨
+                {t("homepage.hero.title")}
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground">
-                Nous créons des expériences web immersives qui captent l'attention 
-                et convertissent les visiteurs en clients fidèles 🚀
+                {t("homepage.hero.description")}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contact" className="btn-afh group">
-                  Démarrer un projet
+                <Link to={`/${language}/contact`} className="btn-afh group">
+                  {t("homepage.hero.startProject")}
                   <ArrowRight className="inline-block ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link to="/portfolio" className="btn-afh-outline">
-                  Voir nos réalisations
+                <Link to={`/${language}/portfolio`} className="btn-afh-outline">
+                  {t("homepage.hero.seePortfolio")}
                 </Link>
               </div>
             </div>
@@ -57,7 +59,7 @@ const Index = () => {
                 <div className="relative z-10 aspect-video rounded-lg overflow-hidden">
                   <img 
                     src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=2064&auto=format&fit=crop"
-                    alt="Développement Web" 
+                    alt="Web Development" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>
@@ -71,61 +73,24 @@ const Index = () => {
       <section className="py-20 bg-gradient-light dark:bg-gradient-dark">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Nos Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("homepage.services.title")}</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Des solutions digitales complètes pour tous vos besoins 🛠️
+              {t("homepage.services.description")}
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Développement Web",
-                description: "Sites web personnalisés, applications web, e-commerce, optimisés pour la performance et le référencement.",
-                icon: "💻",
-                delay: "0ms"
-              },
-              {
-                title: "SEO / Référencement Naturel",
-                description: "Stratégies d'optimisation pour les moteurs de recherche, analyse de mots-clés, et amélioration du classement organique.",
-                icon: "🔍",
-                delay: "100ms"
-              },
-              {
-                title: "Design Graphique",
-                description: "Conception d'identités visuelles, logos, UI/UX design et supports de communication.",
-                icon: "🎨",
-                delay: "200ms"
-              },
-              {
-                title: "Marketing Digital",
-                description: "SEO/SEA, campagnes publicitaires en ligne, gestion des réseaux sociaux, content marketing.",
-                icon: "📈",
-                delay: "300ms"
-              },
-              {
-                title: "Formation & Support",
-                description: "Sessions de formation personnalisées, support technique et accompagnement continu.",
-                icon: "🛠️",
-                delay: "400ms"
-              },
-              {
-                title: "Maintenance & Évolution",
-                description: "Maintenance préventive, mise à jour, sécurité et amélioration continue de vos solutions digitales.",
-                icon: "⚙️",
-                delay: "500ms"
-              }
-            ].map((service, index) => (
+            {t("homepage.services.items", { returnObjects: true }).map((service: any, index: number) => (
               <div 
                 key={index}
                 className="glass-card rounded-xl p-6 hover:translate-y-[-5px] transition-all duration-300"
-                style={{ animationDelay: service.delay }}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="text-3xl mb-4">{service.icon}</div>
                 <h3 className="text-xl font-bold mb-3">{service.title}</h3>
                 <p className="text-muted-foreground mb-4">{service.description}</p>
-                <Link to="/services" className="text-afh font-medium hover:underline inline-flex items-center">
-                  En savoir plus
+                <Link to={`/${language}/services`} className="text-afh font-medium hover:underline inline-flex items-center">
+                  {t("homepage.services.learnMore")}
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </div>
@@ -133,8 +98,8 @@ const Index = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Link to="/services" className="btn-afh inline-flex items-center">
-              Tous nos services
+            <Link to={`/${language}/services`} className="btn-afh inline-flex items-center">
+              {t("homepage.services.allServices")}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
@@ -148,49 +113,37 @@ const Index = () => {
             <div>
               <img 
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
-                alt="Notre équipe" 
+                alt="Our team" 
                 className="rounded-2xl shadow-lg object-cover w-full h-[400px]"
               />
             </div>
             
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-bold">Pourquoi Choisir <span className="text-afh">AFH Agency</span> ?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">{t("homepage.whyUs.title")}</h2>
               
               <div className="space-y-4">
-                {[
-                  {
-                    title: "Expertise reconnue",
-                    description: "Notre équipe de professionnels cumule plus de 15 ans d'expérience dans le digital.",
-                    icon: <Award className="h-6 w-6 text-afh" />
-                  },
-                  {
-                    title: "Approche personnalisée",
-                    description: "Chaque projet est unique et mérite une stratégie sur mesure adaptée à vos objectifs.",
-                    icon: <Users className="h-6 w-6 text-afh" />
-                  },
-                  {
-                    title: "Résultats mesurables",
-                    description: "Nous nous concentrons sur des KPIs concrets pour mesurer l'impact de nos interventions.",
-                    icon: <BarChart className="h-6 w-6 text-afh" />
-                  },
-                  {
-                    title: "Accompagnement continu",
-                    description: "Au-delà de la livraison, nous vous accompagnons dans l'évolution de votre présence digitale.",
-                    icon: <Clock className="h-6 w-6 text-afh" />
-                  }
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <div className="mt-1">{item.icon}</div>
-                    <div>
-                      <h3 className="font-semibold text-xl">{item.title}</h3>
-                      <p className="text-muted-foreground">{item.description}</p>
+                {t("homepage.whyUs.items", { returnObjects: true }).map((item: any, index: number) => {
+                  const icons = [
+                    <Award key="award" className="h-6 w-6 text-afh" />,
+                    <Users key="users" className="h-6 w-6 text-afh" />,
+                    <BarChart key="chart" className="h-6 w-6 text-afh" />,
+                    <Clock key="clock" className="h-6 w-6 text-afh" />
+                  ];
+                  
+                  return (
+                    <div key={index} className="flex items-start space-x-3">
+                      <div className="mt-1">{icons[index]}</div>
+                      <div>
+                        <h3 className="font-semibold text-xl">{item.title}</h3>
+                        <p className="text-muted-foreground">{item.description}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
               
-              <Link to="/about" className="btn-afh inline-flex items-center">
-                En savoir plus sur nous
+              <Link to={`/${language}/about`} className="btn-afh inline-flex items-center">
+                {t("homepage.whyUs.learnMore")}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </div>
@@ -202,9 +155,9 @@ const Index = () => {
       <section className="py-20 bg-gradient-light dark:bg-gradient-dark">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ce que nos clients disent</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("homepage.testimonials.title")}</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              La satisfaction de nos clients est notre priorité absolue
+              {t("homepage.testimonials.description")}
             </p>
           </div>
           
@@ -260,12 +213,12 @@ const Index = () => {
         
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="glass-card rounded-2xl p-8 md:p-12 afh-glow text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Prêt à transformer votre présence digitale ? ✨</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{t("homepage.cta.title")}</h2>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Prenez contact avec notre équipe pour discuter de votre projet et découvrir comment nous pouvons vous aider à atteindre vos objectifs 🚀
+              {t("homepage.cta.description")}
             </p>
-            <Link to="/contact" className="btn-afh inline-flex items-center">
-              Contactez-nous
+            <Link to={`/${language}/contact`} className="btn-afh inline-flex items-center">
+              {t("homepage.cta.contact")}
               <ArrowRight className="ml-2" />
             </Link>
           </div>

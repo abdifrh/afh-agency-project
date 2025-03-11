@@ -2,17 +2,19 @@
 import { useState, useRef } from "react";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Portfolio = () => {
+  const { t, language } = useLanguage();
   const [activeFilter, setActiveFilter] = useState("tous");
   const projectsRef = useRef<HTMLDivElement>(null);
 
   const filters = [
-    { id: "tous", label: "Tous" },
-    { id: "site-web", label: "Sites Web" },
-    { id: "print", label: "Print" },
-    { id: "digital", label: "Digital" },
-    { id: "branding", label: "Branding" },
+    { id: "tous", label: t("portfolio.filters.all") },
+    { id: "site-web", label: t("portfolio.filters.websites") },
+    { id: "print", label: t("portfolio.filters.print") },
+    { id: "digital", label: t("portfolio.filters.digital") },
+    { id: "branding", label: t("portfolio.filters.branding") },
   ];
 
   const projects = [
@@ -38,7 +40,7 @@ const Portfolio = () => {
       id: 3,
       title: "La Piazzetta - Carte de fidélité",
       category: "print",
-      description: "Conception de cartes de fidélité attractives pour renforcer l’engagement des clients de La Piazzetta.",
+      description: "Conception de cartes de fidélité attractives pour renforcer l'engagement des clients de La Piazzetta.",
       image: "/img/projects/1518456343338.jpg",
       client: "La Piazzetta",
       slug: "la-piazzetta-carte-fidelite"
@@ -47,7 +49,7 @@ const Portfolio = () => {
       id: 4,
       title: "La Piazzetta - Flyer carte des menus",
       category: "print",
-      description: "Création de flyers et menus élégants pour sublimer l’identité visuelle de La Piazzetta.",
+      description: "Création de flyers et menus élégants pour sublimer l'identité visuelle de La Piazzetta.",
       image: "/img/projects/1518057111178.jpg",
       client: "La Piazzetta",
       slug: "la-piazzetta-flyer-carte-menus"
@@ -56,7 +58,7 @@ const Portfolio = () => {
       id: 5,
       title: "Site vitrine",
       category: "site-web",
-      description: "Création d’un site vitrine moderne et fonctionnel pour Taxi Étoile Sélestat, facilitant la réservation et la mise en relation avec les clients.",
+      description: "Création d'un site vitrine moderne et fonctionnel pour Taxi Étoile Sélestat, facilitant la réservation et la mise en relation avec les clients.",
       image: "/img/projects/1515465723425.jpg",
       client: "Taxi Etoile Séléstat",
       slug: "site-web-taxi-etoile-selestat"
@@ -65,7 +67,7 @@ const Portfolio = () => {
       id: 6,
       title: "Logo & Identité visuelle",
       category: "branding",
-      description: "Création d’un logo unique et professionnel pour Taxi Étoile Sélestat, reflétant son identité et sa fiabilité.",
+      description: "Création d'un logo unique et professionnel pour Taxi Étoile Sélestat, reflétant son identité et sa fiabilité.",
       image: "/img/projects/155673243235.jpg",
       client: "Taxi Etoile Séléstat",
       slug: "logo-taxi-etoile-selestat"
@@ -88,9 +90,9 @@ const Portfolio = () => {
     <div className="min-h-screen pt-24 bg-gradient-light dark:bg-gradient-dark">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">Notre Portfolio</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">{t("portfolio.title")}</h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Découvrez nos projets récents et laissez-vous inspirer par notre créativité et notre expertise.
+            {t("portfolio.description")}
           </p>
         </div>
 
@@ -126,7 +128,7 @@ const Portfolio = () => {
                     <div className="p-6 w-full">
                       <div className="flex justify-between items-center">
                         <span className="text-white text-sm">{project.client}</span>
-                        <Link to={`/portfolio/${project.slug}`} className="bg-afh p-2 rounded-full text-white hover:scale-110 transition-transform">
+                        <Link to={`/${language}/portfolio/${project.slug}`} className="bg-afh p-2 rounded-full text-white hover:scale-110 transition-transform">
                           <ArrowUpRight size={16} />
                         </Link>
                       </div>
@@ -146,10 +148,10 @@ const Portfolio = () => {
                     {project.description}
                   </p>
                   <Link 
-                    to={`/portfolio/${project.slug}`}
+                    to={`/${language}/portfolio/${project.slug}`}
                     className="mt-auto inline-flex items-center text-sm font-medium text-afh hover:underline"
                   >
-                    Voir le projet
+                    {t("portfolio.viewProject")}
                     <ExternalLink className="ml-1 h-4 w-4" />
                   </Link>
                 </div>
@@ -160,9 +162,9 @@ const Portfolio = () => {
 
         {filteredProjects.length === 0 && (
           <div className="text-center py-12">
-            <h3 className="text-xl font-medium mb-2">Aucun projet trouvé</h3>
+            <h3 className="text-xl font-medium mb-2">{t("portfolio.noProjects.title")}</h3>
             <p className="text-muted-foreground">
-              Nous n'avons pas encore de projets dans cette catégorie.
+              {t("portfolio.noProjects.description")}
             </p>
           </div>
         )}
