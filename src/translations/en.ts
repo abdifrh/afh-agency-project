@@ -1,8 +1,7 @@
-
 export const enTranslations = {
   navigation: {
     home: "Home",
-    services: "Services",
+    services: "Services", 
     articles: "Articles",
     portfolio: "Portfolio",
     about: "About",
@@ -78,6 +77,28 @@ export const enTranslations = {
     testimonials: {
       title: "What our clients say",
       description: "Our clients' satisfaction is our absolute priority",
+      items: [
+        {
+          name: "Sophie Dupont",
+          company: "Tech Innovate",
+          text: "AFH Agency completely transformed our online presence. Our traffic increased by 150% in just three months!"
+        },
+        {
+          name: "Thomas Martin",
+          company: "EcoStart",
+          text: "Professionalism, creativity and responsiveness. Three words that perfectly define the experience of working with AFH Agency."
+        },
+        {
+          name: "Julie Legrand",
+          company: "Mode & Style",
+          text: "Our online store saw its conversions increase by 75% after the redesign by AFH Agency. An investment that quickly paid off."
+        },
+        {
+          name: "Maxime Durand",
+          company: "Digital Solutions",
+          text: "Thanks to the SEO implemented by AFH Agency, our website is now on the first page of Google. Our visibility has exploded and our leads have tripled!"
+        }
+      ]
     },
     cta: {
       title: "Ready to transform your digital presence? ✨",

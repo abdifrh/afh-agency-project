@@ -77,6 +77,28 @@ export const frTranslations = {
     testimonials: {
       title: "Ce que nos clients disent",
       description: "La satisfaction de nos clients est notre priorité absolue",
+      items: [
+        {
+          name: "Sophie Dupont",
+          company: "Tech Innovate",
+          text: "L'équipe d'AFH Agency a complètement transformé notre présence en ligne. Notre trafic a augmenté de 150% en seulement trois mois !"
+        },
+        {
+          name: "Thomas Martin",
+          company: "EcoStart",
+          text: "Professionnalisme, créativité et réactivité. Trois mots qui définissent parfaitement l'expérience de travail avec AFH Agency."
+        },
+        {
+          name: "Julie Legrand",
+          company: "Mode & Style",
+          text: "Notre boutique en ligne a vu ses conversions augmenter de 75% après la refonte réalisée par AFH Agency. Un investissement qui a rapidement porté ses fruits."
+        },
+        {
+          name: "Maxime Durand",
+          company: "Digital Solutions",
+          text: "Grâce au référencement naturel mis en place par AFH Agency, notre site web est maintenant en première page de Google. Notre visibilité a explosé et nos leads ont triplé !"
+        }
+      ]
     },
     cta: {
       title: "Prêt à transformer votre présence digitale ? ✨",

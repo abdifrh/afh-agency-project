@@ -1,3 +1,4 @@
+
 import { ArrowRight, Sparkles, CheckCircle, Users, BarChart, Clock, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
@@ -11,32 +12,31 @@ const Index = () => {
   
   // Define why us items using the t function with returnObjects option
   const whyUsItems = t("homepage.whyUs.items", { returnObjects: true });
-
-  // Define testimonial items with fallback data
-  const testimonialItems = [
+  
+  // Define testimonial items using the t function with returnObjects option
+  const testimonialItems = t("homepage.testimonials.items", { returnObjects: true });
+  
+  // Fallback testimonial data in case the translation isn't available
+  const fallbackTestimonials = [
     {
       name: "Sophie Dupont",
       company: "Tech Innovate",
-      testimonial: t("homepage.testimonials.items.1.text") || "L'équipe d'AFH Agency a complètement transformé notre présence en ligne. Notre trafic a augmenté de 150% en seulement trois mois !",
-      image: "https://randomuser.me/api/portraits/women/12.jpg"
+      text: "AFH Agency completely transformed our online presence. Our traffic increased by 150% in just three months!"
     },
     {
       name: "Thomas Martin",
       company: "EcoStart",
-      testimonial: t("homepage.testimonials.items.2.text") || "Professionnalisme, créativité et réactivité. Trois mots qui définissent parfaitement l'expérience de travail avec AFH Agency.",
-      image: "https://randomuser.me/api/portraits/men/32.jpg"
+      text: "Professionalism, creativity and responsiveness. Three words that perfectly define the experience of working with AFH Agency."
     },
     {
       name: "Julie Legrand",
       company: "Mode & Style",
-      testimonial: t("homepage.testimonials.items.3.text") || "Notre boutique en ligne a vu ses conversions augmenter de 75% après la refonte réalisée par AFH Agency. Un investissement qui a rapidement porté ses fruits.",
-      image: "https://randomuser.me/api/portraits/women/45.jpg"
+      text: "Our online store saw its conversions increase by 75% after the redesign by AFH Agency. An investment that quickly paid off."
     },
     {
       name: "Maxime Durand",
       company: "Digital Solutions",
-      testimonial: t("homepage.testimonials.items.4.text") || "Grâce au référencement naturel mis en place par AFH Agency, notre site web est maintenant en première page de Google. Notre visibilité a explosé et nos leads ont triplé !",
-      image: "https://randomuser.me/api/portraits/men/22.jpg"
+      text: "Thanks to the SEO implemented by AFH Agency, our website is now on the first page of Google. Our visibility has exploded and our leads have tripled!"
     }
   ];
 
@@ -195,16 +195,16 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {testimonialItems.map((testimonial, index) => (
+            {(Array.isArray(testimonialItems) ? testimonialItems : fallbackTestimonials).map((testimonial, index) => (
               <div key={index} className="glass-card rounded-xl p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <img 
-                    src={testimonial.image} 
+                    src={`https://randomuser.me/api/portraits/${index % 2 === 0 ? 'women' : 'men'}/${12 + index * 10}.jpg`} 
                     alt={testimonial.name} 
                     className="h-20 w-20 rounded-full object-cover border-2 border-afh"
                   />
                 </div>
-                <p className="italic text-muted-foreground mb-4">"{testimonial.testimonial}"</p>
+                <p className="italic text-muted-foreground mb-4">"{testimonial.text}"</p>
                 <h4 className="font-semibold">{testimonial.name}</h4>
                 <p className="text-sm text-afh">{testimonial.company}</p>
               </div>
