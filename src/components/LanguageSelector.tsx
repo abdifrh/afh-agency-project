@@ -2,9 +2,24 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import { cn } from "@/lib/utils";
 import { Globe } from "lucide-react";
+import { useEffect } from "react";
 
 export default function LanguageSelector({ className }: { className?: string }) {
   const { language, changeLanguage } = useLanguage();
+
+  // Force reload after language change to ensure all components update
+  useEffect(() => {
+    const handleLanguageChange = () => {
+      // This will trigger when the URL changes due to language change
+      const pathParts = window.location.pathname.split('/');
+      if (pathParts[1] && (pathParts[1] === "fr" || pathParts[1] === "en") && pathParts[1] !== language) {
+        changeLanguage(pathParts[1]);
+      }
+    };
+
+    window.addEventListener('popstate', handleLanguageChange);
+    return () => window.removeEventListener('popstate', handleLanguageChange);
+  }, [language, changeLanguage]);
 
   return (
     <div className={cn("relative group", className)}>

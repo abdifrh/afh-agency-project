@@ -1,28 +1,40 @@
 
 import { User, Code, Lightbulb, Target, Users, Award } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = () => {
-  const values = [
+  const { t } = useLanguage();
+  
+  // Define values using the t function with returnObjects option
+  const values = t("about.values.items", { returnObjects: true }) || [
     {
       icon: <Lightbulb className="h-6 w-6 text-afh" />,
-      title: "Créativité",
-      description: "Nous repoussons constamment les limites de la créativité pour offrir des solutions innovantes."
+      title: "Creativity",
+      description: "We constantly push the boundaries of creativity to offer innovative solutions."
     },
     {
       icon: <Target className="h-6 w-6 text-afh" />,
       title: "Excellence",
-      description: "Nous visons l'excellence dans chaque projet, avec une attention méticuleuse aux détails."
+      description: "We aim for excellence in every project, with meticulous attention to detail."
     },
     {
       icon: <Users className="h-6 w-6 text-afh" />,
       title: "Collaboration",
-      description: "Nous travaillons en étroite collaboration avec nos clients pour comprendre leurs besoins."
+      description: "We work closely with our clients to understand their needs."
     },
     {
       icon: <Award className="h-6 w-6 text-afh" />,
-      title: "Qualité",
-      description: "La qualité est au cœur de notre approche, dans chaque ligne de code et chaque pixel."
+      title: "Quality",
+      description: "Quality is at the heart of our approach, in every line of code and every pixel."
     },
+  ];
+
+  // Fallback icons for values
+  const valueIcons = [
+    <Lightbulb key="lightbulb" className="h-6 w-6 text-afh" />,
+    <Target key="target" className="h-6 w-6 text-afh" />,
+    <Users key="users" className="h-6 w-6 text-afh" />,
+    <Award key="award" className="h-6 w-6 text-afh" />
   ];
 
   const testimonials = [
@@ -85,21 +97,16 @@ const About = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 animate-slide-up">
                 <div className="inline-block glass px-3 py-1 rounded-full text-sm text-afh font-medium mb-2">
-                  Notre Histoire
+                  {t("about.story.subtitle")}
                 </div>
                 <h1 className="text-3xl md:text-4xl font-bold">
-                  Façonner l'avenir <span className="text-afh">digital</span>
+                  {t("about.title")} <span className="text-afh">digital</span>
                 </h1>
                 <p className="text-muted-foreground">
-                Fondée en 2018, AFH Agency est née de ma passion pour le design et la technologie.
-                Dès le départ, mon objectif était clair : aider les entreprises à se démarquer en ligne
-                avec des expériences digitales uniques et impactantes.
+                  {t("about.story.description1")}
                 </p>
                 <p className="text-muted-foreground">
-                Au fil des années, l'agence s'est développée, rassemblant une équipe de talents créatifs,
-                développeurs et stratèges partageant la même vision.
-                Aujourd'hui, nous avons accompagné plus de 50 entreprises dans leur transformation digitale,
-                en leur offrant des solutions sur mesure pour renforcer leur présence en ligne et atteindre leurs objectifs.
+                  {t("about.story.description2")}
                 </p>
               </div>
               <div className="relative">
@@ -118,21 +125,21 @@ const About = () => {
         {/* Our Values */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Nos Valeurs</h2>
+            <h2 className="text-3xl font-bold mb-4">{t("about.values.title")}</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Les principes fondamentaux qui guident chacune de nos actions
+              {t("about.values.description")}
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((value, index) => (
+            {(Array.isArray(values) ? values : []).map((value, index) => (
               <div 
                 key={index} 
                 className="glass-card rounded-xl p-6 flex flex-col items-center text-center animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="h-14 w-14 rounded-full glass flex items-center justify-center mb-4">
-                  {value.icon}
+                  {valueIcons[index]}
                 </div>
                 <h3 className="text-xl font-bold mb-3">{value.title}</h3>
                 <p className="text-muted-foreground">{value.description}</p>
@@ -144,9 +151,9 @@ const About = () => {
         {/* Testimonials */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Ce que disent nos clients</h2>
+            <h2 className="text-3xl font-bold mb-4">{t("about.testimonials.title")}</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Découvrez les expériences de ceux qui nous ont fait confiance
+              {t("about.testimonials.description")}
             </p>
           </div>
           

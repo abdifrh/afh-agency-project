@@ -3,9 +3,11 @@ import { useState } from "react";
 import { Check, MapPin, Phone, Mail, Send, Instagram, Facebook, Linkedin } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import emailjs from 'emailjs-com';
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -42,8 +44,8 @@ const Contact = () => {
       setIsSubmitting(false);
       setIsSubmitted(true);
       toast({
-        title: "Message envoyé ! ✅",
-        description: "Nous vous répondrons dans les plus brefs délais.",
+        title: t("contact.toast.success"),
+        description: t("contact.toast.successDescription"),
       });
       setTimeout(() => {
         setFormState({
@@ -59,8 +61,8 @@ const Contact = () => {
       console.error('Failed to send email:', error);
       setIsSubmitting(false);
       toast({
-        title: "Erreur",
-        description: "Une erreur est survenue. Veuillez réessayer plus tard.",
+        title: t("contact.toast.error"),
+        description: t("contact.toast.errorDescription"),
         variant: "destructive",
       });
     });
@@ -69,17 +71,17 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <MapPin className="h-5 w-5 text-afh" />,
-      title: "Lieu",
+      title: t("contact.info.location"),
       details: "Strasbourg, France",
     },
     {
       icon: <Phone className="h-5 w-5 text-afh" />,
-      title: "Téléphone",
+      title: t("contact.info.phone"),
       details: "+33 7 50 01 58 96",
     },
     {
       icon: <Mail className="h-5 w-5 text-afh" />,
-      title: "Email",
+      title: t("contact.info.email"),
       details: "contact@afh-agency.com",
     },
   ];
@@ -106,9 +108,9 @@ const Contact = () => {
     <div className="min-h-screen pt-24 pb-0 bg-gradient-light dark:bg-gradient-dark flex flex-col">
       <div className="container mx-auto px-4 md:px-6 flex-grow">
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">Contactez-nous ✉️</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">{t("contact.title")}</h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Discutons de votre projet et voyons comment nous pouvons vous aider à atteindre vos objectifs 🚀
+            {t("contact.description")}
           </p>
         </div>
 
@@ -116,12 +118,12 @@ const Contact = () => {
           <div className="glass-card rounded-2xl shadow-xl overflow-hidden">
             <div className="grid md:grid-cols-2">
               <div className="p-8 md:p-10">
-                <h2 className="text-2xl font-bold mb-6">Envoyez-nous un message 📝</h2>
+                <h2 className="text-2xl font-bold mb-6">{t("contact.form.title")}</h2>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
                     <label htmlFor="name" className="block text-sm font-medium">
-                      Nom complet
+                      {t("contact.form.name")}
                     </label>
                     <input
                       id="name"
@@ -131,13 +133,13 @@ const Contact = () => {
                       value={formState.name}
                       onChange={handleChange}
                       className="glass-input w-full px-4 py-2 rounded-lg placeholder:text-muted-foreground/50"
-                      placeholder="Votre nom"
+                      placeholder={t("contact.form.name")}
                     />
                   </div>
                   
                   <div className="space-y-2">
                     <label htmlFor="email" className="block text-sm font-medium">
-                      Email
+                      {t("contact.form.email")}
                     </label>
                     <input
                       id="email"
@@ -147,13 +149,13 @@ const Contact = () => {
                       value={formState.email}
                       onChange={handleChange}
                       className="glass-input w-full px-4 py-2 rounded-lg placeholder:text-muted-foreground/50"
-                      placeholder="votre@email.com"
+                      placeholder="your@email.com"
                     />
                   </div>
                   
                   <div className="space-y-2">
                     <label htmlFor="subject" className="block text-sm font-medium">
-                      Sujet
+                      {t("contact.form.subject")}
                     </label>
                     <select
                       id="subject"
@@ -163,17 +165,17 @@ const Contact = () => {
                       onChange={handleChange}
                       className="glass-input w-full px-4 py-2 rounded-lg"
                     >
-                      <option value="" disabled>Sélectionnez un sujet</option>
-                      <option value="projet">Nouveau projet</option>
-                      <option value="collaboration">Collaboration</option>
-                      <option value="information">Demande d'information</option>
-                      <option value="autre">Autre</option>
+                      <option value="" disabled>{t("contact.form.subjectOptions.default")}</option>
+                      <option value="projet">{t("contact.form.subjectOptions.newProject")}</option>
+                      <option value="collaboration">{t("contact.form.subjectOptions.collaboration")}</option>
+                      <option value="information">{t("contact.form.subjectOptions.information")}</option>
+                      <option value="autre">{t("contact.form.subjectOptions.other")}</option>
                     </select>
                   </div>
                   
                   <div className="space-y-2">
                     <label htmlFor="message" className="block text-sm font-medium">
-                      Message
+                      {t("contact.form.message")}
                     </label>
                     <textarea
                       id="message"
@@ -183,7 +185,7 @@ const Contact = () => {
                       value={formState.message}
                       onChange={handleChange}
                       className="glass-input w-full px-4 py-2 rounded-lg placeholder:text-muted-foreground/50"
-                      placeholder="Comment pouvons-nous vous aider ?"
+                      placeholder={t("contact.form.messagePlaceholder")}
                     />
                   </div>
                   
@@ -195,17 +197,17 @@ const Contact = () => {
                     {isSubmitting ? (
                       <span className="inline-flex items-center">
                         <span className="animate-spin mr-2 h-4 w-4 border-2 border-white border-t-transparent rounded-full"></span>
-                        Envoi en cours...
+                        {t("contact.form.sending")}
                       </span>
                     ) : isSubmitted ? (
                       <span className="inline-flex items-center">
                         <Check className="mr-2 h-4 w-4" />
-                        Message envoyé ! ✅
+                        {t("contact.form.sent")}
                       </span>
                     ) : (
                       <span className="inline-flex items-center">
                         <Send className="mr-2 h-4 w-4" />
-                        Envoyer le message
+                        {t("contact.form.send")}
                       </span>
                     )}
                   </button>
@@ -213,7 +215,7 @@ const Contact = () => {
               </div>
               
               <div className="bg-gradient-to-br from-afh/90 to-afh-dark p-8 md:p-10 text-white">
-                <h2 className="text-2xl font-bold mb-6">Informations de contact 📞</h2>
+                <h2 className="text-2xl font-bold mb-6">{t("contact.info.title")}</h2>
                 
                 <div className="space-y-6 mb-10">
                   {contactInfo.map((info, index) => (
@@ -230,15 +232,15 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <h3 className="font-medium text-white/90 mb-3">Horaires d'ouverture ⏰</h3>
+                  <h3 className="font-medium text-white/90 mb-3">{t("contact.info.hours.title")}</h3>
                   <div className="text-white/70 space-y-2">
-                    <p>Lundi - Samedi: 9h00 - 18h00</p>
-                    <p>Weekend: Fermé</p>
+                    <p>{t("contact.info.hours.weekdays")}</p>
+                    <p>{t("contact.info.hours.weekend")}</p>
                   </div>
                 </div>
                 
                 <div className="mt-10">
-                  <h3 className="font-medium text-white/90 mb-3">Suivez-nous</h3>
+                  <h3 className="font-medium text-white/90 mb-3">{t("contact.info.followUs")}</h3>
                   <div className="flex space-x-3">
                     {socialIcons.map((social) => (
                       <a

@@ -29,7 +29,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   const location = useLocation();
   const [language, setLanguage] = useState<string>(defaultLanguage);
   
-  // Detect language from the URL on initial load
+  // Detect language from the URL on initial load and route changes
   useEffect(() => {
     const pathParts = location.pathname.split('/');
     if (pathParts[1] === "fr" || pathParts[1] === "en") {
@@ -38,7 +38,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
       // If we're at the root, redirect to the default language
       navigate(`/${defaultLanguage}${location.pathname}`);
     }
-  }, [location.pathname]);
+  }, [location.pathname, navigate]);
 
   // Get translation function for the current language
   const getTranslation = (key: string, options?: { returnObjects?: boolean }): any => {
@@ -76,7 +76,8 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
         pathParts.splice(1, 0, newLanguage);
       }
       
-      navigate(pathParts.join('/'));
+      const newPath = pathParts.join('/');
+      navigate(newPath, { replace: true });
     }
   };
 
