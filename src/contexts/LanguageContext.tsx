@@ -47,7 +47,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     let result: any = translations;
     
     for (const k of keys) {
-      if (result && result[k]) {
+      if (result && result[k] !== undefined) {
         result = result[k];
       } else {
         console.warn(`Translation key not found: ${key}`);

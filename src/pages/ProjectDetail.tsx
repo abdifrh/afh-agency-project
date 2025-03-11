@@ -3,34 +3,53 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, ExternalLink, Clock, Calendar, Tag, User, CheckCircle } from "lucide-react";
 import { getProjectBySlug, Project } from "../data/projects";
 
-type ProjectCategory = 'site-web' | 'e-commerce' | 'application' | 'branding' | 'print' | 'digital';
+type ProjectCategory = 'site-web' | 'e-commerce' | 'application' | 'print' | 'digital' | 'branding';
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const [project, setProject] = useState<Project | null>(null);
-  const [activeImage, setActiveImage] = useState<number>(0);
+  const [currentImage, setCurrentImage] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     if (slug) {
       const foundProject = getProjectBySlug(slug);
       if (foundProject) {
         setProject(foundProject);
       } else {
-        navigate("/portfolio", { replace: true });
+        navigate('/portfolio');
       }
+      setLoading(false);
     }
   }, [slug, navigate]);
 
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 py-20 flex justify-center items-center">
+        <div className="animate-pulse flex space-x-4">
+          <div className="flex-1 space-y-6 py-10">
+            <div className="h-6 bg-afh/20 rounded w-3/4"></div>
+            <div className="space-y-3">
+              <div className="h-4 bg-afh/20 rounded"></div>
+              <div className="h-4 bg-afh/20 rounded w-5/6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (!project) {
     return (
-      <div className="min-h-screen pt-24 bg-gradient-light dark:bg-gradient-dark flex items-center justify-center">
-        <div className="glass-card p-10 rounded-xl text-center">
-          <h2 className="text-2xl font-bold mb-4">Chargement du projet...</h2>
-          <p className="text-muted-foreground">
-            Veuillez patienter pendant que nous récupérons les informations du projet.
-          </p>
+      <div className="container mx-auto px-4 py-20">
+        <div className="text-center">
+          <h1 className="text-3xl font-bold">Project not found</h1>
+          <p className="mt-4 text-muted-foreground">The project you're looking for doesn't exist or has been removed.</p>
+          <Link to="/portfolio" className="btn-afh mt-8 inline-flex items-center">
+            Return to portfolio
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
         </div>
       </div>
     );
@@ -46,6 +65,10 @@ const ProjectDetail = () => {
         return renderApplicationLayout();
       case 'branding':
         return renderBrandingLayout();
+      case 'print':
+        return renderPrintLayout();
+      case 'digital':
+        return renderDigitalLayout();
       default:
         return renderDefaultLayout();
     }
@@ -69,7 +92,7 @@ const ProjectDetail = () => {
               <div className="relative">
                 <div className="glass-card rounded-xl overflow-hidden">
                   <img 
-                    src={project.gallery[activeImage]} 
+                    src={project.gallery[currentImage]} 
                     alt={`${project.title} gallery`} 
                     className="w-full h-auto rounded-lg"
                   />
@@ -78,14 +101,14 @@ const ProjectDetail = () => {
                 {project.gallery.length > 1 && (
                   <div className="absolute top-1/2 left-0 right-0 transform -translate-y-1/2 flex justify-between px-4">
                     <button 
-                      onClick={() => setActiveImage((prev) => (prev === 0 ? project.gallery!.length - 1 : prev - 1))}
+                      onClick={() => setCurrentImage((prev) => (prev === 0 ? project.gallery!.length - 1 : prev - 1))}
                       className="bg-white/80 dark:bg-black/50 p-2 rounded-full hover:bg-white dark:hover:bg-black transition-colors"
                       aria-label="Previous image"
                     >
                       <ChevronLeft className="h-5 w-5" />
                     </button>
                     <button 
-                      onClick={() => setActiveImage((prev) => (prev === project.gallery!.length - 1 ? 0 : prev + 1))}
+                      onClick={() => setCurrentImage((prev) => (prev === project.gallery!.length - 1 ? 0 : prev + 1))}
                       className="bg-white/80 dark:bg-black/50 p-2 rounded-full hover:bg-white dark:hover:bg-black transition-colors"
                       aria-label="Next image"
                     >
@@ -100,9 +123,9 @@ const ProjectDetail = () => {
                   {project.gallery.map((_, index) => (
                     <button
                       key={index}
-                      onClick={() => setActiveImage(index)}
+                      onClick={() => setCurrentImage(index)}
                       className={`h-2 w-2 rounded-full transition-all ${
-                        activeImage === index ? "bg-afh w-4" : "bg-gray-300 dark:bg-gray-600"
+                        currentImage === index ? "bg-afh w-4" : "bg-gray-300 dark:bg-gray-600"
                       }`}
                       aria-label={`Go to image ${index + 1}`}
                     />
@@ -561,6 +584,246 @@ const ProjectDetail = () => {
     </div>
   );
 
+  const renderPrintLayout = () => (
+    <div className="space-y-12">
+      <div className="glass-card p-8 rounded-xl overflow-hidden">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <div className="inline-block glass px-3 py-1 rounded-full text-xs font-semibold text-afh mb-4">
+              {project.category.replace("-", " ")}
+            </div>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">{project.title}</h1>
+            <p className="text-lg text-muted-foreground mb-6">{project.description}</p>
+            
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              <div>
+                <p className="text-sm text-muted-foreground">Client</p>
+                <p className="font-medium">{project.client}</p>
+              </div>
+              {project.year && (
+                <div>
+                  <p className="text-sm text-muted-foreground">Année</p>
+                  <p className="font-medium">{project.year}</p>
+                </div>
+              )}
+            </div>
+            
+            {project.tags && (
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.tags.map((tag, index) => (
+                  <span key={index} className="px-3 py-1 glass text-xs font-medium rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+          
+          <div className="relative group overflow-hidden rounded-xl">
+            <img 
+              src={project.image} 
+              alt={project.title} 
+              className="w-full h-auto rounded-lg transition-transform duration-700 group-hover:scale-105" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="grid md:grid-cols-2 gap-8">
+        <div className="space-y-6">
+          <h2 className="text-2xl font-bold">Le défi</h2>
+          <p className="text-muted-foreground">{project.challenge}</p>
+          
+          <h2 className="text-2xl font-bold">Notre solution</h2>
+          <p className="text-muted-foreground">{project.solution}</p>
+        </div>
+        
+        <div className="glass-card p-6 rounded-xl">
+          <h3 className="text-xl font-bold mb-4">Résultats clés</h3>
+          
+          <div className="space-y-4">
+            {project.results && project.results.split('. ').map((result, index) => (
+              result.trim() && (
+                <div key={index} className="flex items-start">
+                  <div className="bg-afh/20 p-2 rounded-full mr-3 mt-1">
+                    <CheckCircle className="h-4 w-4 text-afh" />
+                  </div>
+                  <p>{result.trim().endsWith('.') ? result.trim() : `${result.trim()}.`}</p>
+                </div>
+              )
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      {project.gallery && (
+        <div className="space-y-6">
+          <h2 className="text-2xl font-bold">Galerie</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            {project.gallery.map((image, index) => (
+              <div key={index} className="glass-card p-2 rounded-xl overflow-hidden group">
+                <img 
+                  src={image} 
+                  alt={`${project.title} gallery ${index + 1}`} 
+                  className="w-full h-48 object-cover rounded-lg transition-transform duration-500 group-hover:scale-105" 
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+      
+      {project.testimonial && (
+        <div className="glass-card p-8 rounded-xl">
+          <div className="flex flex-col md:flex-row md:items-center gap-6">
+            <div className="md:w-1/3">
+              <h3 className="text-xl font-bold mb-3">Ce que dit notre client</h3>
+              <p className="font-medium">{project.testimonial.author}</p>
+              <p className="text-sm text-muted-foreground">{project.testimonial.position}</p>
+            </div>
+            
+            <div className="md:w-2/3">
+              <blockquote className="text-lg italic text-muted-foreground">
+                "{project.testimonial.content}"
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      )}
+      
+      {project.technologies && (
+        <div className="flex flex-wrap gap-4 justify-center">
+          {project.technologies.map((tech, index) => (
+            <span key={index} className="px-4 py-2 glass rounded-full text-sm font-medium">
+              {tech}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+
+  const renderDigitalLayout = () => (
+    <div className="space-y-12">
+      <div className="glass-card p-8 rounded-xl overflow-hidden">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <div className="inline-block glass px-3 py-1 rounded-full text-xs font-semibold text-afh mb-4">
+              {project.category.replace("-", " ")}
+            </div>
+            <h1 className="text-3xl md:text-4xl font-bold mb-4">{project.title}</h1>
+            <p className="text-lg text-muted-foreground mb-6">{project.description}</p>
+            
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              <div>
+                <p className="text-sm text-muted-foreground">Client</p>
+                <p className="font-medium">{project.client}</p>
+              </div>
+              {project.year && (
+                <div>
+                  <p className="text-sm text-muted-foreground">Année</p>
+                  <p className="font-medium">{project.year}</p>
+                </div>
+              )}
+            </div>
+            
+            {project.tags && (
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.tags.map((tag, index) => (
+                  <span key={index} className="px-3 py-1 glass text-xs font-medium rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+          
+          <div className="relative group overflow-hidden rounded-xl">
+            <img 
+              src={project.image} 
+              alt={project.title} 
+              className="w-full h-auto rounded-lg transition-transform duration-700 group-hover:scale-105" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+        </div>
+      </div>
+      
+      <div className="grid md:grid-cols-2 gap-8">
+        <div className="space-y-6">
+          <h2 className="text-2xl font-bold">Le défi</h2>
+          <p className="text-muted-foreground">{project.challenge}</p>
+          
+          <h2 className="text-2xl font-bold">Notre solution</h2>
+          <p className="text-muted-foreground">{project.solution}</p>
+        </div>
+        
+        <div className="glass-card p-6 rounded-xl">
+          <h3 className="text-xl font-bold mb-4">Résultats clés</h3>
+          
+          <div className="space-y-4">
+            {project.results && project.results.split('. ').map((result, index) => (
+              result.trim() && (
+                <div key={index} className="flex items-start">
+                  <div className="bg-afh/20 p-2 rounded-full mr-3 mt-1">
+                    <CheckCircle className="h-4 w-4 text-afh" />
+                  </div>
+                  <p>{result.trim().endsWith('.') ? result.trim() : `${result.trim()}.`}</p>
+                </div>
+              )
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      {project.gallery && (
+        <div className="space-y-6">
+          <h2 className="text-2xl font-bold">Galerie</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            {project.gallery.map((image, index) => (
+              <div key={index} className="glass-card p-2 rounded-xl overflow-hidden group">
+                <img 
+                  src={image} 
+                  alt={`${project.title} gallery ${index + 1}`} 
+                  className="w-full h-48 object-cover rounded-lg transition-transform duration-500 group-hover:scale-105" 
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+      
+      {project.testimonial && (
+        <div className="glass-card p-8 rounded-xl">
+          <div className="flex flex-col md:flex-row md:items-center gap-6">
+            <div className="md:w-1/3">
+              <h3 className="text-xl font-bold mb-3">Ce que dit notre client</h3>
+              <p className="font-medium">{project.testimonial.author}</p>
+              <p className="text-sm text-muted-foreground">{project.testimonial.position}</p>
+            </div>
+            
+            <div className="md:w-2/3">
+              <blockquote className="text-lg italic text-muted-foreground">
+                "{project.testimonial.content}"
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      )}
+      
+      {project.technologies && (
+        <div className="flex flex-wrap gap-4 justify-center">
+          {project.technologies.map((tech, index) => (
+            <span key={index} className="px-4 py-2 glass rounded-full text-sm font-medium">
+              {tech}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+
   const renderDefaultLayout = () => (
     <div className="grid md:grid-cols-2 gap-8 mb-16">
       <div>
@@ -577,8 +840,8 @@ const ProjectDetail = () => {
             {project.gallery.map((image, index) => (
               <div 
                 key={index} 
-                className={`glass-card p-2 rounded-xl overflow-hidden cursor-pointer ${activeImage === index ? 'ring-2 ring-afh' : ''}`}
-                onClick={() => setActiveImage(index)}
+                className={`glass-card p-2 rounded-xl overflow-hidden cursor-pointer ${currentImage === index ? 'ring-2 ring-afh' : ''}`}
+                onClick={() => setCurrentImage(index)}
               >
                 <img 
                   src={image} 

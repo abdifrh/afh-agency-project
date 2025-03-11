@@ -29,20 +29,48 @@ const Index = () => {
   // Define why us items
   const whyUsItems = [
     {
-      title: t("homepage.whyUs.items.expertise.title"),
-      description: t("homepage.whyUs.items.expertise.description")
+      title: t("homepage.whyUs.items.expertise.title") || "Expertise",
+      description: t("homepage.whyUs.items.expertise.description") || "Years of experience in digital solutions"
     },
     {
-      title: t("homepage.whyUs.items.team.title"),
-      description: t("homepage.whyUs.items.team.description")
+      title: t("homepage.whyUs.items.team.title") || "Dedicated Team",
+      description: t("homepage.whyUs.items.team.description") || "A team of passionate experts"
     },
     {
-      title: t("homepage.whyUs.items.results.title"),
-      description: t("homepage.whyUs.items.results.description")
+      title: t("homepage.whyUs.items.results.title") || "Results Oriented",
+      description: t("homepage.whyUs.items.results.description") || "Focused on delivering measurable results"
     },
     {
-      title: t("homepage.whyUs.items.support.title"),
-      description: t("homepage.whyUs.items.support.description")
+      title: t("homepage.whyUs.items.support.title") || "Customer Support",
+      description: t("homepage.whyUs.items.support.description") || "Ongoing support and maintenance"
+    }
+  ];
+
+  // Define testimonial items with fallback data
+  const testimonialItems = [
+    {
+      name: "Sophie Dupont",
+      company: "Tech Innovate",
+      testimonial: t("homepage.testimonials.items.1.text") || "L'équipe d'AFH Agency a complètement transformé notre présence en ligne. Notre trafic a augmenté de 150% en seulement trois mois !",
+      image: "https://randomuser.me/api/portraits/women/12.jpg"
+    },
+    {
+      name: "Thomas Martin",
+      company: "EcoStart",
+      testimonial: t("homepage.testimonials.items.2.text") || "Professionnalisme, créativité et réactivité. Trois mots qui définissent parfaitement l'expérience de travail avec AFH Agency.",
+      image: "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    {
+      name: "Julie Legrand",
+      company: "Mode & Style",
+      testimonial: t("homepage.testimonials.items.3.text") || "Notre boutique en ligne a vu ses conversions augmenter de 75% après la refonte réalisée par AFH Agency. Un investissement qui a rapidement porté ses fruits.",
+      image: "https://randomuser.me/api/portraits/women/45.jpg"
+    },
+    {
+      name: "Maxime Durand",
+      company: "Digital Solutions",
+      testimonial: t("homepage.testimonials.items.4.text") || "Grâce au référencement naturel mis en place par AFH Agency, notre site web est maintenant en première page de Google. Notre visibilité a explosé et nos leads ont triplé !",
+      image: "https://randomuser.me/api/portraits/men/22.jpg"
     }
   ];
 
@@ -201,32 +229,7 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                name: "Sophie Dupont",
-                company: "Tech Innovate",
-                testimonial: "L'équipe d'AFH Agency a complètement transformé notre présence en ligne. Notre trafic a augmenté de 150% en seulement trois mois !",
-                image: "https://randomuser.me/api/portraits/women/12.jpg"
-              },
-              {
-                name: "Thomas Martin",
-                company: "EcoStart",
-                testimonial: "Professionnalisme, créativité et réactivité. Trois mots qui définissent parfaitement l'expérience de travail avec AFH Agency.",
-                image: "https://randomuser.me/api/portraits/men/32.jpg"
-              },
-              {
-                name: "Julie Legrand",
-                company: "Mode & Style",
-                testimonial: "Notre boutique en ligne a vu ses conversions augmenter de 75% après la refonte réalisée par AFH Agency. Un investissement qui a rapidement porté ses fruits.",
-                image: "https://randomuser.me/api/portraits/women/45.jpg"
-              },
-              {
-                name: "Maxime Durand",
-                company: "Digital Solutions",
-                testimonial: "Grâce au référencement naturel mis en place par AFH Agency, notre site web est maintenant en première page de Google. Notre visibilité a explosé et nos leads ont triplé !",
-                image: "https://randomuser.me/api/portraits/men/22.jpg"
-              }
-            ].map((testimonial, index) => (
+            {testimonialItems.map((testimonial, index) => (
               <div key={index} className="glass-card rounded-xl p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <img 
