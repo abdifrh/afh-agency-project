@@ -6,7 +6,7 @@ import { frTranslations } from "../translations/fr";
 
 type LanguageContextType = {
   language: string;
-  t: (key: string) => string;
+  t: (key: string, options?: { returnObjects?: boolean }) => any;
   changeLanguage: (language: string) => void;
 };
 
@@ -41,7 +41,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   }, [location.pathname]);
 
   // Get translation function for the current language
-  const getTranslation = (key: string): string => {
+  const getTranslation = (key: string, options?: { returnObjects?: boolean }): any => {
     const translations = language === "fr" ? frTranslations : enTranslations;
     const keys = key.split(".");
     let result: any = translations;
@@ -53,6 +53,11 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
         console.warn(`Translation key not found: ${key}`);
         return key;
       }
+    }
+    
+    // Return the actual object if returnObjects is true
+    if (options?.returnObjects === true) {
+      return result;
     }
     
     return typeof result === "string" ? result : key;

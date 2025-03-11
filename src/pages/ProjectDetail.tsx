@@ -1,8 +1,9 @@
-
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, ExternalLink, Clock, Calendar, Tag, User, CheckCircle } from "lucide-react";
 import { getProjectBySlug, Project } from "../data/projects";
+
+type ProjectCategory = 'site-web' | 'e-commerce' | 'application' | 'branding' | 'print' | 'digital';
 
 const ProjectDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -35,9 +36,8 @@ const ProjectDetail = () => {
     );
   }
 
-  // Different layouts based on project category
   const renderProjectContent = () => {
-    switch (project.category) {
+    switch (project.category as ProjectCategory) {
       case 'site-web':
         return renderWebsiteLayout();
       case 'e-commerce':
@@ -686,7 +686,6 @@ const ProjectDetail = () => {
         
         {renderProjectContent()}
         
-        {/* Navigation between projects */}
         <div className="border-t border-gray-200 dark:border-gray-800 pt-8 mt-16">
           <div className="flex justify-between">
             {project.prevProject && (
