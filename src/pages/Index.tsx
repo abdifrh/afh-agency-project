@@ -1,4 +1,3 @@
-
 import { ArrowRight, Sparkles, CheckCircle, Users, BarChart, Clock, Award } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
@@ -7,44 +6,11 @@ import { useLanguage } from "@/contexts/LanguageContext";
 const Index = () => {
   const { t, language } = useLanguage();
 
-  // Define service items directly since they contain React components
-  const serviceItems = [
-    {
-      icon: "💻",
-      title: t("homepage.services.items.webdev.title"),
-      description: t("homepage.services.items.webdev.description")
-    },
-    {
-      icon: "🔍",
-      title: t("homepage.services.items.seo.title"),
-      description: t("homepage.services.items.seo.description")
-    },
-    {
-      icon: "🎨",
-      title: t("homepage.services.items.design.title"),
-      description: t("homepage.services.items.design.description")
-    }
-  ];
-
-  // Define why us items
-  const whyUsItems = [
-    {
-      title: t("homepage.whyUs.items.expertise.title") || "Expertise",
-      description: t("homepage.whyUs.items.expertise.description") || "Years of experience in digital solutions"
-    },
-    {
-      title: t("homepage.whyUs.items.team.title") || "Dedicated Team",
-      description: t("homepage.whyUs.items.team.description") || "A team of passionate experts"
-    },
-    {
-      title: t("homepage.whyUs.items.results.title") || "Results Oriented",
-      description: t("homepage.whyUs.items.results.description") || "Focused on delivering measurable results"
-    },
-    {
-      title: t("homepage.whyUs.items.support.title") || "Customer Support",
-      description: t("homepage.whyUs.items.support.description") || "Ongoing support and maintenance"
-    }
-  ];
+  // Define service items using the t function with returnObjects option
+  const serviceItems = t("homepage.services.items", { returnObjects: true });
+  
+  // Define why us items using the t function with returnObjects option
+  const whyUsItems = t("homepage.whyUs.items", { returnObjects: true });
 
   // Define testimonial items with fallback data
   const testimonialItems = [
@@ -147,7 +113,7 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {serviceItems.map((service, index) => (
+            {Array.isArray(serviceItems) && serviceItems.map((service, index) => (
               <div 
                 key={index}
                 className="glass-card rounded-xl p-6 hover:translate-y-[-5px] transition-all duration-300"
@@ -189,7 +155,7 @@ const Index = () => {
               <h2 className="text-3xl md:text-4xl font-bold">{t("homepage.whyUs.title")}</h2>
               
               <div className="space-y-4">
-                {whyUsItems.map((item, index) => {
+                {Array.isArray(whyUsItems) && whyUsItems.map((item, index) => {
                   const icons = [
                     <Award key="award" className="h-6 w-6 text-afh" />,
                     <Users key="users" className="h-6 w-6 text-afh" />,

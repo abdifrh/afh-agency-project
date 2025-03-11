@@ -1,4 +1,3 @@
-
 export const frTranslations = {
   navigation: {
     home: "Accueil",
