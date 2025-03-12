@@ -105,6 +105,11 @@ export const enTranslations = {
       description: "Get in touch with our team to discuss your project and discover how we can help you achieve your goals 🚀",
       contact: "Contact us",
     },
+    projects: {
+      title: "Our Latest Projects",
+      description: "Discover some of our recent achievements and see how we help our clients succeed",
+      viewAll: "View all projects",
+    },
   },
   portfolio: {
     title: "Our Portfolio",

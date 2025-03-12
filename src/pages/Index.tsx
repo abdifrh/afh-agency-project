@@ -1,12 +1,12 @@
-
-import { ArrowRight, Sparkles, CheckCircle, Users, BarChart, Clock, Award } from "lucide-react";
+import { ArrowRight, Sparkles, CheckCircle, Users, BarChart, Clock, Award, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { getProjectsByCategory } from "@/data/projects";
 
 const Index = () => {
   const { t, language } = useLanguage();
-
+  
   // Define service items using the t function with returnObjects option
   const serviceItems = t("homepage.services.items", { returnObjects: true });
   
@@ -39,6 +39,11 @@ const Index = () => {
       text: "Thanks to the SEO implemented by AFH Agency, our website is now on the first page of Google. Our visibility has exploded and our leads have tripled!"
     }
   ];
+
+  // Get some featured projects
+  const webProjects = getProjectsByCategory("site-web");
+  const brandingProjects = getProjectsByCategory("branding");
+  const featuredProjects = [...webProjects, ...brandingProjects].slice(0, 3);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -133,6 +138,71 @@ const Index = () => {
           <div className="text-center mt-12">
             <Link to={`/${language}/services`} className="btn-afh inline-flex items-center">
               {t("homepage.services.allServices")}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section className="py-20 bg-gradient-light dark:bg-gradient-dark">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("homepage.projects.title")}</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              {t("homepage.projects.description")}
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {featuredProjects.map((project) => (
+              <div key={project.id} className="group h-full">
+                <div className="glass-card rounded-xl overflow-hidden h-full flex flex-col">
+                  <div className="relative overflow-hidden aspect-video">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                      <div className="p-6 w-full">
+                        <div className="flex justify-between items-center">
+                          <span className="text-white text-sm">{project.client}</span>
+                          <Link to={`/${language}/portfolio/${project.slug}`} className="bg-afh p-2 rounded-full text-white hover:scale-110 transition-transform">
+                            <ArrowUpRight size={16} />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-6 flex-1 flex flex-col">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-xl font-bold group-hover:text-afh transition-colors">
+                        {project.title}
+                      </h3>
+                      <span className="glass px-3 py-1 rounded-full text-xs font-medium capitalize">
+                        {project.category.replace("-", " ")}
+                      </span>
+                    </div>
+                    <p className="text-muted-foreground mb-4">
+                      {project.description}
+                    </p>
+                    <Link 
+                      to={`/${language}/portfolio/${project.slug}`}
+                      className="mt-auto inline-flex items-center text-sm font-medium text-afh hover:underline"
+                    >
+                      {t("portfolio.viewProject")}
+                      <ExternalLink className="ml-1 h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link to={`/${language}/portfolio`} className="btn-afh inline-flex items-center">
+              {t("homepage.projects.viewAll")}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </div>
