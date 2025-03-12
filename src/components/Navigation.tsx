@@ -30,7 +30,7 @@ export default function Navigation() {
   const navLinks = [
     { name: t("navigation.home"), path: `/${language}` },
     { name: t("navigation.services"), path: `/${language}/services` },
-    { name: t("navigation.articles"), path: `/${language}/articles` },
+    // { name: t("navigation.articles"), path: `/${language}/articles` },
     { name: t("navigation.portfolio"), path: `/${language}/portfolio` },
     { name: t("navigation.about"), path: `/${language}/about` },
     { name: t("navigation.contact"), path: `/${language}/contact` },

@@ -62,11 +62,11 @@ export default function Footer() {
                   {t("navigation.services")}
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to={`/${language}/articles`} className="text-muted-foreground hover:text-afh transition-colors">
                   {t("navigation.articles")}
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to={`/${language}/portfolio`} className="text-muted-foreground hover:text-afh transition-colors">
                   {t("navigation.portfolio")}
