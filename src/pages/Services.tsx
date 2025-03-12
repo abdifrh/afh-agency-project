@@ -62,9 +62,9 @@ const Services = () => {
         {/* Services Section */}
         <div className="mb-20">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">{t("services.title")}</h2>
+            <h2 className="text-3xl font-bold mb-4">{t("services.hero.title")}</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              {t("services.description")}
+              {t("services.hero.description")}
             </p>
           </div>
 
