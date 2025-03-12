@@ -98,7 +98,7 @@ export default function Navigation() {
         </div>
 
         {isMenuOpen && (
-          <div className="bg-transparent backdrop-blur-md md:hidden absolute top-full left-0 right-0 shadow-xl animate-fade-in">
+          <div className="glass md:hidden absolute top-full left-0 right-0 shadow-xl animate-fade-in">
             <div className="p-4 space-y-3">
               {navLinks.map((link) => (
                 <Link
