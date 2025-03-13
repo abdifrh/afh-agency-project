@@ -26,14 +26,14 @@ export const frTranslations = {
           icon: "💻",
         },
         {
-          title: "SEO / Référencement Naturel",
-          description: "Stratégies d'optimisation pour les moteurs de recherche, analyse de mots-clés, et amélioration du classement organique.",
-          icon: "🔍",
-        },
-        {
           title: "Design Graphique",
           description: "Conception d'identités visuelles, logos, UI/UX design et supports de communication.",
           icon: "🎨",
+        },
+        {
+          title: "SEO / Référencement Naturel",
+          description: "Stratégies d'optimisation pour les moteurs de recherche, analyse de mots-clés, et amélioration du classement organique.",
+          icon: "🔍",
         },
         {
           title: "Marketing Digital",
