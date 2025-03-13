@@ -39,11 +39,6 @@ export const frTranslations = {
           title: "Marketing Digital",
           description: "SEO/SEA, campagnes publicitaires en ligne, gestion des réseaux sociaux, content marketing.",
           icon: "📈",
-        },
-        {
-          title: "Formation & Support",
-          description: "Sessions de formation personnalisées, support technique et accompagnement continu.",
-          icon: "🛠️",
         }
       ],
     },

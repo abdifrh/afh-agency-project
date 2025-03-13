@@ -39,11 +39,6 @@ export const enTranslations = {
           title: "Digital Marketing",
           description: "SEO/SEA, online advertising campaigns, social media management, content marketing.",
           icon: "📈",
-        },
-        {
-          title: "Training & Support",
-          description: "Customized training sessions, technical support and continuous assistance.",
-          icon: "🛠️",
         }
       ],
     },
