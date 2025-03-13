@@ -241,8 +241,8 @@ export const enTranslations = {
         description: "Targeted marketing strategies to increase your online visibility and generate qualified leads.",
         icon: "📈",
         services: [
-          "Search engine optimization (SEO)",
           "Advertising campaigns (SEA, Social Ads)",
+          "Search engine optimization (SEO)",
           "Content marketing",
           "Social media management",
           "Email marketing"

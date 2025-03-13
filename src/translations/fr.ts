@@ -241,8 +241,8 @@ export const frTranslations = {
         description: "Des stratégies marketing ciblées pour augmenter votre visibilité en ligne et générer des leads qualifiés.",
         icon: "📈",
         services: [
-          "Référencement naturel (SEO)",
           "Campagnes publicitaires (SEA, Social Ads)",
+          "Référencement naturel (SEO)",
           "Marketing de contenu",
           "Gestion des réseaux sociaux",
           "Email marketing"
