@@ -34,17 +34,17 @@ const Services = () => {
               <div className="relative animate-slide-down hidden md:block">
                 <div className="grid grid-cols-2 gap-6">
                   <div className="glass-card p-5 rounded-xl rotate-3 afh-glow">
-                    <div className="text-4xl mb-2">💡</div>
+                    <div className="text-4xl mb-2">💻</div>
                     <h3 className="text-lg font-bold">{t("services.categories.0.title")}</h3>
                     <p className="text-sm text-muted-foreground">{t("services.categories.0.services.0")}</p>
                   </div>
                   <div className="glass-card p-5 rounded-xl -rotate-3 mt-8">
-                    <div className="text-4xl mb-2">💻</div>
+                    <div className="text-4xl mb-2">🎨</div>
                     <h3 className="text-lg font-bold">{t("services.categories.1.title")}</h3>
                     <p className="text-sm text-muted-foreground">{t("services.categories.1.services.0")}</p>
                   </div>
                   <div className="glass-card p-5 rounded-xl -rotate-3">
-                    <div className="text-4xl mb-2">🎨</div>
+                    <div className="text-4xl mb-2">🔍</div>
                     <h3 className="text-lg font-bold">{t("services.categories.2.title")}</h3>
                     <p className="text-sm text-muted-foreground">{t("services.categories.2.services.0")}</p>
                   </div>
