@@ -44,11 +44,6 @@ export const frTranslations = {
           title: "Formation & Support",
           description: "Sessions de formation personnalisées, support technique et accompagnement continu.",
           icon: "🛠️",
-        },
-        {
-          title: "Maintenance & Évolution",
-          description: "Maintenance préventive, mise à jour, sécurité et amélioration continue de vos solutions digitales.",
-          icon: "⚙️",
         }
       ],
     },
@@ -206,18 +201,6 @@ export const frTranslations = {
     },
     categories: [
       {
-        title: "Conseil & Stratégie Digitale",
-        description: "Nous vous accompagnons dans l'élaboration de votre stratégie digitale pour transformer votre vision en résultats concrets.",
-        icon: "💡",
-        services: [
-          "Audit digital approfondi",
-          "Élaboration de stratégies sur mesure",
-          "Planification de la transformation digitale",
-          "Conseil en expérience utilisateur",
-          "Analyse de la concurrence"
-        ]
-      },
-      {
         title: "Développement Web",
         description: "Des solutions web performantes, accessibles et optimisées pour offrir une expérience utilisateur exceptionnelle.",
         icon: "💻",
@@ -239,6 +222,18 @@ export const frTranslations = {
           "Expérience utilisateur (UX)",
           "Motion design et animations",
           "Supports de communication print et web"
+        ]
+      },
+      {
+        title: "SEO / Référencement Naturel",
+        description: "Stratégies d'optimisation pour les moteurs de recherche, analyse de mots-clés, et amélioration du classement organique.",
+        icon: "🔍",
+        services: [
+          "Audit SEO approfondi",
+          "Recherche et analyse de mots-clés",
+          "Optimisation du contenu pour le SEO",
+          "Stratégie de netlinking",
+          "Suivi et analyse des performances SEO"
         ]
       },
       {

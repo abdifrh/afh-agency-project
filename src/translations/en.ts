@@ -26,14 +26,14 @@ export const enTranslations = {
           icon: "💻",
         },
         {
-          title: "SEO / Natural Referencing",
-          description: "Search engine optimization strategies, keyword analysis, and improving organic ranking.",
-          icon: "🔍",
-        },
-        {
           title: "Graphic Design",
           description: "Visual identity design, logos, UI/UX design and communication materials.",
           icon: "🎨",
+        },
+        {
+          title: "SEO / Natural Referencing",
+          description: "Search engine optimization strategies, keyword analysis, and improving organic ranking.",
+          icon: "🔍",
         },
         {
           title: "Digital Marketing",
@@ -44,11 +44,6 @@ export const enTranslations = {
           title: "Training & Support",
           description: "Customized training sessions, technical support and continuous assistance.",
           icon: "🛠️",
-        },
-        {
-          title: "Maintenance & Evolution",
-          description: "Preventive maintenance, updates, security and continuous improvement of your digital solutions.",
-          icon: "⚙️",
         }
       ],
     },
@@ -206,18 +201,6 @@ export const enTranslations = {
     },
     categories: [
       {
-        title: "Consulting & Digital Strategy",
-        description: "We help you develop your digital strategy to transform your vision into concrete results.",
-        icon: "💡",
-        services: [
-          "In-depth digital audit",
-          "Custom strategy development",
-          "Digital transformation planning",
-          "User experience consulting",
-          "Competitive analysis"
-        ]
-      },
-      {
         title: "Web Development",
         description: "High-performance, accessible and optimized web solutions to offer an exceptional user experience.",
         icon: "💻",
@@ -241,6 +224,18 @@ export const enTranslations = {
           "Print and web communication materials"
         ]
       },
+      {
+        "title": "SEO / Organic Search Optimization",
+        "description": "Optimization strategies for search engines, keyword analysis, and organic ranking improvement.",
+        "icon": "🔍",
+        "services": [
+          "In-depth SEO audit",
+          "Keyword research and analysis",
+          "SEO content optimization",
+          "Link-building strategy",
+          "SEO performance tracking and analysis"
+        ]
+      },      
       {
         title: "Digital Marketing",
         description: "Targeted marketing strategies to increase your online visibility and generate qualified leads.",
