@@ -143,7 +143,7 @@ const enProjects: Project[] = [
     title: "Logo & Visual Identity",
     category: "branding",
     description: "Creation of a unique and professional logo for Taxi Étoile Sélestat, reflecting its identity and reliability.",
-    image: "/img/projects/155673243235.jpg",
+    image: "/img/projects/4436563443542.jpg",
     client: "Taxi Etoile Séléstat",
     slug: "logo-taxi-etoile-selestat",
     year: "2025",
@@ -153,9 +153,9 @@ const enProjects: Project[] = [
     results: "A distinctive and memorable logo, enhancing Taxi Étoile Sélestat's reputation and facilitating customer identification.",
     technologies: ["Adobe Creative Suite", "Illustrator", "Photoshop"],
     gallery: [
-      "/img/projects/155673243235.jpg",
       "/img/projects/4436563443542.jpg",
-      "/img/projects/4643278689435.jpg"
+      "/img/projects/4643278689435.jpg",
+      "/img/projects/155673243235.jpg"
     ],
     nextProject: "",
     prevProject: "site-web-taxi-etoile-selestat"
@@ -282,7 +282,7 @@ const frProjects: Project[] = [
     title: "Logo & Identité visuelle",
     category: "branding",
     description: "Création d'un logo unique et professionnel pour Taxi Étoile Sélestat, reflétant son identité et sa fiabilité.",
-    image: "/img/projects/155673243235.jpg",
+    image: "/img/projects/4436563443542.jpg",
     client: "Taxi Etoile Séléstat",
     slug: "logo-taxi-etoile-selestat",
     year: "2025",
@@ -292,9 +292,9 @@ const frProjects: Project[] = [
     results: "Un logo distinctif et mémorable, renforçant la notoriété de Taxi Étoile Sélestat et facilitant son identification par les clients.",
     technologies: ["Adobe Creative Suite", "Illustrator", "Photoshop"],
     gallery: [
-      "/img/projects/155673243235.jpg",
       "/img/projects/4436563443542.jpg",
-      "/img/projects/4643278689435.jpg"
+      "/img/projects/4643278689435.jpg",
+      "/img/projects/155673243235.jpg"
     ],
     nextProject: "",
     prevProject: "site-web-taxi-etoile-selestat"
