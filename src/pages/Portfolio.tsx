@@ -68,7 +68,7 @@ const Portfolio = () => {
       title: "Logo & Identité visuelle",
       category: "branding",
       description: "Création d'un logo unique et professionnel pour Taxi Étoile Sélestat, reflétant son identité et sa fiabilité.",
-      image: "/img/projects/155673243235.jpg",
+      image: "/img/projects/4436563443542.jpg",
       client: "Taxi Etoile Séléstat",
       slug: "logo-taxi-etoile-selestat"
     }
