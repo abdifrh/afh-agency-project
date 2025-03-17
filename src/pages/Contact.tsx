@@ -35,7 +35,7 @@ const Contact = () => {
 
     // Update EmailJS configuration with the correct details
     emailjs.send(
-      'service_afhagency', 
+      'service_afhagencyionos', 
       'template_ga4klml',
       templateParams,
       't4yO1uzO3JXGWprMH'
