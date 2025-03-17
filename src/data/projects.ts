@@ -79,11 +79,6 @@ const enProjects: Project[] = [
     solution: "Elegant and consistent design with the restaurant's visual identity, quality printing, and practical format for daily use.",
     results: "An increase in customer loyalty thanks to an attractive and functional tool, strengthening the relationship between the restaurant and its customers.",
     technologies: ["Adobe Creative Suite", "Illustrator", "Photoshop", "InDesign"],
-    testimonial: {
-      content: "The visual identity created perfectly captures the essence of our brand - artisanal, authentic, and passionate. It helps us tell our story without even saying a word.",
-      author: "Antoine Lefèvre",
-      position: "Founder, La Piazzetta"
-    },
     gallery: [
       "/img/projects/1518456343338.jpg"
     ],
@@ -104,11 +99,6 @@ const enProjects: Project[] = [
     solution: "We designed graphic materials highlighting the authenticity of the dishes and the restaurant's warm atmosphere. The design incorporates visual elements reminiscent of Italy, elegant typography, and a structured layout for fluid reading.",
     results: "Impactful flyers that attract attention and encourage restaurant discovery. Modern, easy-to-read menu cards that highlight La Piazzetta's specialties. Better visual consistency that strengthens the brand image and improves the on-site customer experience.",
     technologies: ["Adobe Creative Suite", "Illustrator", "Photoshop", "InDesign"],
-    testimonial: {
-      content: "The visual identity created perfectly captures the essence of our brand - artisanal, authentic, and passionate. It helps us tell our story without even saying a word.",
-      author: "Antoine Lefèvre",
-      position: "Founder, La Piazzetta"
-    },
     gallery: [
       "/img/projects/1518057111178.jpg",
       "/img/projects/1518435461178.jpg",
@@ -159,7 +149,29 @@ const enProjects: Project[] = [
     ],
     nextProject: "",
     prevProject: "site-web-taxi-etoile-selestat"
-  }
+  },
+  {
+    id: 7,
+    title: "Digital Mini Catalog",
+    category: "digital",
+    description: "Creation of a vertical mini catalog optimized for Instagram and Snapchat stories, showcasing ZEINEB DISTRIBUTION’s products in a clear and impactful way.",
+    image: "/img/projects/145354753225.jpg",
+    client: "Zeineb Distribution",
+    slug: "zeineb-distribution-catalogue-digital",
+    year: "2025",
+    tags: ["Branding", "Catalog", "Flyer", "Digital"],
+    challenge: "Effectively present a wide range of imported products from Algeria (household supplies, food, etc.) in an engaging digital format adapted for social media, while maintaining a consistent visual identity.",
+    solution: "A striking design with a smooth and attractive layout, optimized for vertical formats. A carefully selected color scheme and visuals to ensure optimal readability and capture audience attention on Instagram and Snapchat.",
+    results: "A dynamic and modern mini catalog that facilitates product discovery, enhances ZEINEB DISTRIBUTION’s visibility, and encourages interaction with the brand on social media.",
+    technologies: ["Adobe Creative Suite", "Photoshop"],
+    gallery: [
+        "/img/projects/145354753225.jpg",
+        "/img/projects/146578764332.jpg"
+    ],
+    nextProject: "",
+    prevProject: "logo-taxi-etoile-selestat"
+}
+
 ];
 
 // French versions of the projects
@@ -218,11 +230,6 @@ const frProjects: Project[] = [
     solution: "Design élégant et cohérent avec l'identité visuelle du restaurant, impression de qualité et format pratique pour une utilisation quotidienne.",
     results: "Une augmentation de la fidélisation client grâce à un support attractif et fonctionnel, renforçant la relation entre le restaurant et sa clientèle.",
     technologies: ["Adobe Creative Suite", "Illustrator", "Photoshop", "InDesign"],
-    testimonial: {
-      content: "L'identité visuelle créée capture parfaitement l'essence de notre marque - artisanale, authentique et passionnée. Elle nous aide à raconter notre histoire sans même dire un mot.",
-      author: "Antoine Lefèvre",
-      position: "Fondateur, La Piazzetta"
-    },
     gallery: [
       "/img/projects/1518456343338.jpg"
     ],
@@ -243,11 +250,6 @@ const frProjects: Project[] = [
     solution: "Nous avons conçu des supports graphiques en mettant en avant l'authenticité des plats et l'ambiance chaleureuse du restaurant. Le design intègre des éléments visuels rappelant l'Italie, une typographie élégante et une mise en page structurée pour une lecture fluide.",
     results: "Des flyers impactants qui attirent l'attention et incitent à la découverte du restaurant. Des cartes de menus modernes, faciles à lire et mettant en valeur les spécialités de La Piazzetta. Une meilleure cohérence visuelle qui renforce l'image de marque et améliore l'expérience client sur place.",
     technologies: ["Adobe Creative Suite", "Illustrator", "Photoshop", "InDesign"],
-    testimonial: {
-      content: "L'identité visuelle créée capture parfaitement l'essence de notre marque - artisanale, authentique et passionnée. Elle nous aide à raconter notre histoire sans même dire un mot.",
-      author: "Antoine Lefèvre",
-      position: "Fondateur, La Piazzetta"
-    },
     gallery: [
       "/img/projects/1518057111178.jpg",
       "/img/projects/1518435461178.jpg",
@@ -296,9 +298,30 @@ const frProjects: Project[] = [
       "/img/projects/4643278689435.jpg",
       "/img/projects/155673243235.jpg"
     ],
-    nextProject: "",
+    nextProject: "zeineb-distribution-catalogue-digital",
     prevProject: "site-web-taxi-etoile-selestat"
-  }
+  },
+    {
+    id: 7,
+    title: "Mini catalogue digital",
+    category: "digital",
+    description: "Création d’un mini catalogue vertical optimisé pour les stories Instagram et Snapchat, mettant en avant les produits de ZEINEB DISTRIBUTION de manière claire et impactante.",
+    image: "/img/projects/145354753225.jpg",
+    client: "Zeineb Distribution",
+    slug: "zeineb-distribution-catalogue-digital",
+    year: "2025",
+    tags: ["Branding", "Catalogue", "Flyer", "Digital"],
+    challenge: "Présenter efficacement une large gamme de produits importés d’Algérie (fournitures ménagères, alimentation, etc.) dans un format digital engageant et adapté aux réseaux sociaux, tout en conservant une identité visuelle cohérente.",
+    solution: "Un design percutant avec une mise en page fluide et attrayante, optimisé pour les formats verticaux. Une sélection soignée des couleurs et des visuels pour garantir une lisibilité optimale et capter l’attention du public sur Instagram et Snapchat.",
+    results: "Un mini catalogue dynamique et moderne qui facilite la découverte des produits, améliore la visibilité de ZEINEB DISTRIBUTION et encourage l’interaction avec la marque sur les réseaux sociaux.",
+    technologies: ["Adobe Creative Suite", "Photoshop"],
+    gallery: [
+      "/img/projects/145354753225.jpg",
+      "/img/projects/146578764332.jpg"
+    ],
+    nextProject: "",
+    prevProject: "logo-taxi-etoile-selestat"
+  },
 ];
 
 // Return the right set of projects based on language

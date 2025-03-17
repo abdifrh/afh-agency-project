@@ -51,7 +51,7 @@ export default function Navigation() {
         <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
           <Link to={`/${language}`} className="flex items-center group">
             <img 
-              src="/lovable-uploads/e616b606-b422-4899-a03c-02767eef8b81.png" 
+              src="/img/logo-website.png" 
               alt="AFH Agency" 
               className="h-10 transition-transform duration-300 group-hover:scale-110" 
             />
