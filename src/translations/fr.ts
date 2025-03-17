@@ -34,11 +34,6 @@ export const frTranslations = {
           title: "SEO / Référencement Naturel",
           description: "Stratégies d'optimisation pour les moteurs de recherche, analyse de mots-clés, et amélioration du classement organique.",
           icon: "🔍",
-        },
-        {
-          title: "Marketing Digital",
-          description: "SEO/SEA, campagnes publicitaires en ligne, gestion des réseaux sociaux, content marketing.",
-          icon: "📈",
         }
       ],
     },

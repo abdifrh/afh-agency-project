@@ -34,11 +34,6 @@ export const enTranslations = {
           title: "SEO / Natural Referencing",
           description: "Search engine optimization strategies, keyword analysis, and improving organic ranking.",
           icon: "🔍",
-        },
-        {
-          title: "Digital Marketing",
-          description: "SEO/SEA, online advertising campaigns, social media management, content marketing.",
-          icon: "📈",
         }
       ],
     },
