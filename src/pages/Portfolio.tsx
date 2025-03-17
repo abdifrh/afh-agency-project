@@ -75,7 +75,7 @@ const Portfolio = () => {
     {
       id: 7,
       title: "Mini catalogue digital",
-      category: "Digital",
+      category: "digital",
       description: "Création d’un mini catalogue vertical optimisé pour les stories Instagram et Snapchat, mettant en avant les produits de ZEINEB DISTRIBUTION de manière claire et impactante.",
       image: "/img/projects/145354753225.jpg",
       client: "Zeineb Distribution",
