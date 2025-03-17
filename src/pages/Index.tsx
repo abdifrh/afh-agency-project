@@ -43,9 +43,9 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>AFH Agency | Web Development and SEO</title>
-        <meta name="description" content="Transform your digital presence with AFH Agency. Experts in web development, SEO and digital strategy. Boost your online visibility." />
-        <meta name="keywords" content="web development, SEO, natural referencing, website, web agency, digital strategy, web design" />
+        <title>AFH Agency | Développement Web et référencement SEO</title>
+        <meta name="description" content="Transformez votre présence numérique avec l'agence AFH. Experts en développement web, SEO et stratégie digitale, optimisez votre visibilité en ligne." />
+        <meta name="keywords" content="développement web, SEO, référencement naturel, site web, agence web, stratégie digitale, web design, strasbourg, alsace" />
       </Helmet>
       
       {/* Hero Section */}
@@ -82,8 +82,8 @@ const Index = () => {
               <div className="glass-card p-6 md:p-8 rounded-2xl rotate-3 z-10 afh-glow group">
                 <div className="relative z-10 aspect-video rounded-lg overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=2070&auto=format&fit=crop"
-                    alt="Design Digital Workspace" 
+                    src="/img/web-development.webp"
+                    alt="Web Development" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>
@@ -91,8 +91,8 @@ const Index = () => {
               <div className="glass-card p-6 md:p-8 rounded-2xl absolute -bottom-4 -left-4 -rotate-3 z-0">
                 <div className="relative z-10 aspect-video rounded-lg overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=2064&auto=format&fit=crop"
-                    alt="Web Development" 
+                    src="/img/web-design.webp"
+                    alt="Design Digital Workspace" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 </div>
